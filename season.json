@@ -1,0 +1,941 @@
+{
+  "1": {
+    "label": "Week 1 \u2022 Aug. 27\u201329, 2026",
+    "start": "2026-08-27",
+    "end": "2026-08-29",
+    "games": [
+      [
+        "Duncanville",
+        "Allen",
+        "Friday, Aug. 28",
+        "7:00 PM",
+        "Allen, TX",
+        99,
+        98,
+        97,
+        96
+      ],
+      [
+        "Aledo",
+        "North Crowley",
+        "Friday, Aug. 28",
+        "7:00 PM",
+        "Fort Worth, TX",
+        95,
+        92,
+        97,
+        93
+      ],
+      [
+        "Jenks (OK)",
+        "Southlake Carroll",
+        "Thursday, Aug. 27",
+        "7:00 PM",
+        "Southlake, TX",
+        92,
+        90,
+        91,
+        90
+      ],
+      [
+        "Rockwall-Heath",
+        "Denton Guyer",
+        "Friday, Aug. 28",
+        "7:00 PM",
+        "Denton, TX",
+        89,
+        90,
+        90,
+        84
+      ],
+      [
+        "Prosper",
+        "Rockwall",
+        "Friday, Aug. 28",
+        "7:30 PM",
+        "Rockwall, TX",
+        89,
+        87,
+        94,
+        86
+      ],
+      [
+        "Hebron",
+        "Coppell",
+        "Friday, Aug. 28",
+        "7:00 PM",
+        "Coppell, TX",
+        84,
+        83,
+        89,
+        82
+      ],
+      [
+        "Frisco Lone Star",
+        "Royse City",
+        "Friday, Aug. 28",
+        "7:30 PM",
+        "Royse City, TX",
+        86,
+        87,
+        82,
+        77
+      ],
+      [
+        "Reedy",
+        "Lovejoy",
+        "Friday, Aug. 28",
+        "7:30 PM",
+        "Lucas, TX",
+        79,
+        81,
+        92,
+        81
+      ],
+      [
+        "Crowley",
+        "Cedar Hill",
+        "Friday, Aug. 28",
+        "7:00 PM",
+        "Cedar Hill, TX",
+        76,
+        84,
+        89,
+        82
+      ],
+      [
+        "Arlington Martin",
+        "Mansfield",
+        "Friday, Aug. 28",
+        "7:00 PM",
+        "Mansfield, TX",
+        75,
+        78,
+        91,
+        80
+      ]
+    ]
+  },
+  "2": {
+    "label": "Week 2 \u2022 Sep. 3\u20135, 2026",
+    "start": "2026-09-03",
+    "end": "2026-09-05",
+    "games": [
+      [
+        "Cedar Hill",
+        "Duncanville",
+        "Friday, Sep. 4",
+        "7:00 PM",
+        "Duncanville, TX",
+        94,
+        92,
+        88,
+        90
+      ],
+      [
+        "DeSoto",
+        "Allen",
+        "Friday, Sep. 4",
+        "7:00 PM",
+        "Allen, TX",
+        98,
+        98,
+        98,
+        96
+      ],
+      [
+        "Southlake Carroll",
+        "North Crowley",
+        "Friday, Sep. 4",
+        "7:00 PM",
+        "Fort Worth, TX",
+        97,
+        95,
+        98,
+        94
+      ],
+      [
+        "Coppell",
+        "Waxahachie",
+        "Friday, Sep. 4",
+        "7:00 PM",
+        "Waxahachie, TX",
+        94,
+        90,
+        96,
+        91
+      ],
+      [
+        "Midway",
+        "Aledo",
+        "Friday, Sep. 4",
+        "7:00 PM",
+        "Aledo, TX",
+        89,
+        88,
+        86,
+        82
+      ],
+      [
+        "Denton Guyer",
+        "Melissa",
+        "Friday, Sep. 4",
+        "7:00 PM",
+        "Melissa, TX",
+        91,
+        91,
+        93,
+        86
+      ],
+      [
+        "Prosper",
+        "North Forney",
+        "Friday, Sep. 4",
+        "7:30 PM",
+        "Forney, TX",
+        88,
+        87,
+        91,
+        84
+      ],
+      [
+        "Highland Park",
+        "Rockwall-Heath",
+        "Friday, Sep. 4",
+        "7:30 PM",
+        "Rockwall, TX",
+        86,
+        84,
+        90,
+        81
+      ],
+      [
+        "Forney",
+        "McKinney",
+        "Friday, Sep. 4",
+        "7:30 PM",
+        "McKinney, TX",
+        82,
+        80,
+        90,
+        79
+      ],
+      [
+        "Byron Nelson",
+        "Lewisville",
+        "Friday, Sep. 4",
+        "7:00 PM",
+        "Lewisville, TX",
+        87,
+        83,
+        94,
+        82
+      ]
+    ]
+  },
+  "3": {
+    "label": "Week 3 \u2022 Sep. 10\u201312, 2026",
+    "start": "2026-09-10",
+    "end": "2026-09-12",
+    "games": [
+      [
+        "Allen",
+        "Southlake Carroll",
+        "Friday, Sep. 11",
+        "7:00 PM",
+        "Southlake, TX",
+        98,
+        96,
+        99,
+        96
+      ],
+      [
+        "Summer Creek",
+        "North Crowley",
+        "Friday, Sep. 11",
+        "7:00 PM",
+        "Fort Worth, TX",
+        95,
+        94,
+        95,
+        91
+      ],
+      [
+        "Duncanville",
+        "DeSoto",
+        "Saturday, Sep. 12",
+        "12:00 PM",
+        "DeSoto, TX",
+        100,
+        100,
+        100,
+        100
+      ],
+      [
+        "Frisco Lone Star",
+        "Cedar Hill",
+        "Friday, Sep. 11",
+        "7:00 PM",
+        "Cedar Hill, TX",
+        86,
+        89,
+        90,
+        84
+      ],
+      [
+        "Lewisville",
+        "Denton Ryan",
+        "Friday, Sep. 11",
+        "7:00 PM",
+        "Denton, TX",
+        86,
+        86,
+        93,
+        84
+      ],
+      [
+        "Forney",
+        "Dallas Jesuit",
+        "Friday, Sep. 11",
+        "7:00 PM",
+        "Dallas, TX",
+        80,
+        78,
+        89,
+        78
+      ]
+    ]
+  },
+  "4": {
+    "label": "Week 4 \u2022 Sep. 17\u201319, 2026",
+    "start": "2026-09-17",
+    "end": "2026-09-19",
+    "games": [
+      [
+        "North Crowley",
+        "Duncanville",
+        "Friday, Sep. 18",
+        "7:00 PM",
+        "Duncanville, TX",
+        99,
+        97,
+        99,
+        97
+      ],
+      [
+        "DeSoto",
+        "Centennial",
+        "Friday, Sep. 18",
+        "7:00 PM",
+        "Burleson, TX",
+        91,
+        94,
+        86,
+        87
+      ],
+      [
+        "Highland Park",
+        "Argyle",
+        "Friday, Sep. 18",
+        "7:00 PM",
+        "Argyle, TX",
+        90,
+        86,
+        95,
+        88
+      ],
+      [
+        "Lake Ridge",
+        "Waxahachie",
+        "Friday, Sep. 18",
+        "7:00 PM",
+        "Waxahachie, TX",
+        89,
+        89,
+        92,
+        88
+      ],
+      [
+        "Coppell",
+        "Berkner",
+        "Friday, Sep. 18",
+        "7:00 PM",
+        "Richardson, TX",
+        86,
+        84,
+        86,
+        81
+      ],
+      [
+        "Aledo",
+        "Granbury",
+        "Friday, Sep. 18",
+        "7:00 PM",
+        "Granbury, TX",
+        90,
+        90,
+        84,
+        82
+      ],
+      [
+        "Cedar Hill",
+        "Midlothian",
+        "Friday, Sep. 18",
+        "7:00 PM",
+        "Midlothian, TX",
+        82,
+        84,
+        93,
+        85
+      ]
+    ]
+  },
+  "5": {
+    "label": "Week 5 \u2022 Sep. 24\u201326, 2026",
+    "start": "2026-09-24",
+    "end": "2026-09-26",
+    "games": [
+      [
+        "Duncanville",
+        "Red Oak",
+        "Friday, Sep. 25",
+        "7:00 PM",
+        "Red Oak, TX",
+        94,
+        96,
+        87,
+        90
+      ],
+      [
+        "Princeton",
+        "Allen",
+        "Friday, Sep. 25",
+        "7:00 PM",
+        "Allen, TX",
+        91,
+        92,
+        84,
+        85
+      ],
+      [
+        "Midlothian",
+        "DeSoto",
+        "Friday, Sep. 25",
+        "7:00 PM",
+        "DeSoto, TX",
+        92,
+        94,
+        89,
+        92
+      ],
+      [
+        "Crowley",
+        "North Crowley",
+        "Friday, Sep. 25",
+        "7:00 PM",
+        "Fort Worth, TX",
+        90,
+        92,
+        90,
+        95
+      ],
+      [
+        "V.R. Eaton",
+        "Southlake Carroll",
+        "Friday, Sep. 25",
+        "7:00 PM",
+        "Southlake, TX",
+        91,
+        89,
+        88,
+        88
+      ],
+      [
+        "Arlington Martin",
+        "Aledo",
+        "Friday, Sep. 25",
+        "7:00 PM",
+        "Aledo, TX",
+        88,
+        87,
+        90,
+        87
+      ],
+      [
+        "Frisco Lone Star",
+        "Melissa",
+        "Friday, Sep. 25",
+        "7:00 PM",
+        "Melissa, TX",
+        90,
+        91,
+        96,
+        90
+      ],
+      [
+        "Lancaster",
+        "Cedar Hill",
+        "Friday, Sep. 25",
+        "7:00 PM",
+        "Cedar Hill, TX",
+        86,
+        91,
+        93,
+        94
+      ],
+      [
+        "Denton",
+        "Denton Ryan",
+        "Friday, Sep. 25",
+        "7:00 PM",
+        "Denton, TX",
+        84,
+        86,
+        91,
+        93
+      ],
+      [
+        "Rockwall",
+        "North Forney",
+        "Friday, Sep. 25",
+        "7:30 PM",
+        "Forney, TX",
+        86,
+        84,
+        94,
+        87
+      ]
+    ]
+  },
+  "6": {
+    "label": "Week 6 \u2022 Oct. 1\u20133, 2026",
+    "start": "2026-10-01",
+    "end": "2026-10-03",
+    "games": [
+      [
+        "Denton Guyer",
+        "Braswell",
+        "Friday, Oct. 2",
+        "7:00 PM",
+        "Denton, TX",
+        88,
+        89,
+        92,
+        87
+      ],
+      [
+        "Denton Ryan",
+        "Sherman",
+        "Friday, Oct. 2",
+        "7:00 PM",
+        "Sherman, TX",
+        84,
+        86,
+        88,
+        82
+      ],
+      [
+        "Highland Park",
+        "Richland",
+        "Friday, Oct. 2",
+        "7:00 PM",
+        "North Richland Hills, TX",
+        83,
+        82,
+        86,
+        80
+      ],
+      [
+        "Liberty",
+        "Frisco Lone Star",
+        "Friday, Oct. 2",
+        "7:00 PM",
+        "Frisco, TX",
+        82,
+        84,
+        88,
+        79
+      ],
+      [
+        "Hebron",
+        "Marcus",
+        "Friday, Oct. 2",
+        "7:00 PM",
+        "Flower Mound, TX",
+        80,
+        80,
+        94,
+        86
+      ]
+    ]
+  },
+  "7": {
+    "label": "Week 7 \u2022 Oct. 8\u201310, 2026",
+    "start": "2026-10-08",
+    "end": "2026-10-10",
+    "games": [
+      [
+        "Mansfield",
+        "Duncanville",
+        "Friday, Oct. 9",
+        "7:00 PM",
+        "Duncanville, TX",
+        91,
+        95,
+        86,
+        88
+      ],
+      [
+        "DeSoto",
+        "Lancaster",
+        "Friday, Oct. 9",
+        "7:00 PM",
+        "Lancaster, TX",
+        95,
+        98,
+        91,
+        96
+      ],
+      [
+        "McKinney",
+        "Allen",
+        "Friday, Oct. 9",
+        "7:00 PM",
+        "Allen, TX",
+        91,
+        91,
+        88,
+        91
+      ],
+      [
+        "Arlington Bowie",
+        "Aledo",
+        "Friday, Oct. 9",
+        "7:00 PM",
+        "Aledo, TX",
+        88,
+        89,
+        87,
+        85
+      ],
+      [
+        "Denton Guyer",
+        "Lewisville",
+        "Friday, Oct. 9",
+        "7:00 PM",
+        "Lewisville, TX",
+        90,
+        91,
+        94,
+        88
+      ],
+      [
+        "Heritage",
+        "Frisco Lone Star",
+        "Friday, Oct. 9",
+        "7:00 PM",
+        "Frisco, TX",
+        84,
+        86,
+        89,
+        82
+      ],
+      [
+        "Coppell",
+        "Plano",
+        "Friday, Oct. 9",
+        "7:00 PM",
+        "Plano, TX",
+        85,
+        84,
+        88,
+        82
+      ],
+      [
+        "Lovejoy",
+        "Argyle",
+        "Friday, Oct. 9",
+        "7:00 PM",
+        "Argyle, TX",
+        87,
+        85,
+        96,
+        89
+      ],
+      [
+        "Red Oak",
+        "Crowley",
+        "Friday, Oct. 9",
+        "7:00 PM",
+        "Crowley, TX",
+        82,
+        86,
+        92,
+        88
+      ],
+      [
+        "Cedar Hill",
+        "Mansfield Summit",
+        "Friday, Oct. 9",
+        "7:00 PM",
+        "Mansfield, TX",
+        82,
+        87,
+        90,
+        88
+      ]
+    ]
+  },
+  "8": {
+    "label": "Week 8 \u2022 Oct. 15\u201317, 2026",
+    "start": "2026-10-15",
+    "end": "2026-10-17",
+    "games": [
+      [
+        "Crowley",
+        "Duncanville",
+        "Friday, Oct. 16",
+        "7:00 PM",
+        "Duncanville, TX",
+        92,
+        95,
+        87,
+        90
+      ],
+      [
+        "Mansfield Summit",
+        "DeSoto",
+        "Friday, Oct. 16",
+        "7:00 PM",
+        "DeSoto, TX",
+        92,
+        96,
+        88,
+        91
+      ],
+      [
+        "Aledo",
+        "Arlington",
+        "Friday, Oct. 16",
+        "7:00 PM",
+        "Arlington, TX",
+        89,
+        90,
+        88,
+        87
+      ],
+      [
+        "Coppell",
+        "Lake Highlands",
+        "Friday, Oct. 16",
+        "7:00 PM",
+        "Dallas, TX",
+        84,
+        83,
+        91,
+        84
+      ],
+      [
+        "Midlothian",
+        "Centennial",
+        "Friday, Oct. 16",
+        "7:00 PM",
+        "Burleson, TX",
+        83,
+        82,
+        93,
+        86
+      ],
+      [
+        "Hebron",
+        "Lewisville",
+        "Friday, Oct. 16",
+        "7:00 PM",
+        "Lewisville, TX",
+        82,
+        82,
+        93,
+        88
+      ],
+      [
+        "Allen",
+        "Rock Hill",
+        "Thursday, Oct. 15",
+        "7:00 PM",
+        "Prosper, TX",
+        91,
+        92,
+        86,
+        88
+      ]
+    ]
+  },
+  "9": {
+    "label": "Week 9 \u2022 Oct. 22\u201324, 2026",
+    "start": "2026-10-22",
+    "end": "2026-10-24",
+    "games": [
+      [
+        "Duncanville",
+        "Waxahachie",
+        "Friday, Oct. 23",
+        "7:00 PM",
+        "Waxahachie, TX",
+        99,
+        97,
+        98,
+        97
+      ],
+      [
+        "Dallas Jesuit",
+        "Allen",
+        "Friday, Oct. 23",
+        "7:00 PM",
+        "Allen, TX",
+        91,
+        92,
+        87,
+        86
+      ],
+      [
+        "DeSoto",
+        "Cedar Hill",
+        "Friday, Oct. 23",
+        "7:00 PM",
+        "Cedar Hill, TX",
+        93,
+        96,
+        89,
+        95
+      ],
+      [
+        "Lovejoy",
+        "Eagle Mountain",
+        "Friday, Oct. 23",
+        "7:00 PM",
+        "Fort Worth, TX",
+        82,
+        82,
+        91,
+        84
+      ],
+      [
+        "Red Oak",
+        "Lake Ridge",
+        "Friday, Oct. 23",
+        "7:00 PM",
+        "Mansfield, TX",
+        84,
+        86,
+        94,
+        89
+      ],
+      [
+        "Rock Hill",
+        "McKinney",
+        "Friday, Oct. 23",
+        "7:00 PM",
+        "McKinney, TX",
+        82,
+        81,
+        92,
+        86
+      ]
+    ]
+  },
+  "10": {
+    "label": "Week 10 \u2022 Oct. 29\u201331, 2026",
+    "start": "2026-10-29",
+    "end": "2026-10-31",
+    "games": [
+      [
+        "Lake Ridge",
+        "Duncanville",
+        "Friday, Oct. 30",
+        "7:00 PM",
+        "Duncanville, TX",
+        93,
+        95,
+        88,
+        92
+      ],
+      [
+        "Allen",
+        "McKinney Boyd",
+        "Friday, Oct. 30",
+        "7:00 PM",
+        "McKinney, TX",
+        92,
+        92,
+        87,
+        90
+      ],
+      [
+        "DeSoto",
+        "Mansfield Legacy",
+        "Friday, Oct. 30",
+        "7:00 PM",
+        "Mansfield, TX",
+        91,
+        95,
+        86,
+        90
+      ],
+      [
+        "Waxahachie",
+        "Crowley",
+        "Friday, Oct. 30",
+        "7:00 PM",
+        "Crowley, TX",
+        91,
+        91,
+        94,
+        92
+      ],
+      [
+        "Marcus",
+        "Denton Guyer",
+        "Friday, Oct. 30",
+        "7:00 PM",
+        "Denton, TX",
+        88,
+        89,
+        94,
+        88
+      ],
+      [
+        "Coppell",
+        "Richardson",
+        "Friday, Oct. 30",
+        "7:00 PM",
+        "Richardson, TX",
+        84,
+        83,
+        88,
+        82
+      ],
+      [
+        "Arlington",
+        "Arlington Martin",
+        "Friday, Oct. 30",
+        "7:00 PM",
+        "Arlington, TX",
+        81,
+        82,
+        95,
+        94
+      ],
+      [
+        "Cedar Hill",
+        "Cleburne",
+        "Friday, Oct. 30",
+        "7:00 PM",
+        "Cleburne, TX",
+        80,
+        84,
+        88,
+        84
+      ]
+    ]
+  }
+}
