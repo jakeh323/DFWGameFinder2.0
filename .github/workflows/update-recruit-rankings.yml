@@ -1,0 +1,47 @@
+name: Update Lone Star Prospects
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "30 8 * * 2"
+      timezone: "America/Chicago"
+
+    - cron: "30 8 * * 5"
+      timezone: "America/Chicago"
+
+permissions:
+  contents: write
+
+jobs:
+  prospects:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install packages
+        run: pip install -r requirements.txt
+
+      - name: Refresh recruiting data
+        run: python update_recruit_rankings.py
+
+      - name: Commit recruiting update
+        run: |
+          git config user.name "Lone Star Game Finder Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add recruits.json
+
+          if git diff --cached --quiet; then
+            echo "No recruiting changes."
+          else
+            git commit -m "Update Lone Star prospect rankings"
+            git push
+          fi
