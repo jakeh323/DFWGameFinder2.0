@@ -1,17 +1,15 @@
-# Texas HS Game Finder — Statewide Major Areas
+# Texas HS Game Finder — Branded Version
 
-This version expands the season dataset beyond DFW with verified schedule anchors in:
-- DFW
-- Houston
-- Austin / Central Texas
-- San Antonio
-- East Texas
-- West Texas / Panhandle
+Brand name: Texas HS Game Finder
+Sports: Football, Basketball, Baseball, Softball
+Logo file: texas-hs-game-finder-logo.png
 
-Preset locations remain:
-Dallas, Fort Worth, Austin, Houston, San Antonio, Waco, Tyler, Lubbock,
-Amarillo, Abilene, Midland/Odessa, College Station, Corpus Christi, El Paso.
+The site currently uses football data. The branding is ready for the other three sports.
 
-Important:
-This is a curated statewide major-games dataset, not every Texas high school football game.
-The interface filters by straight-line distance from the selected preset city.
+UPLOAD TO GITHUB / VERCEL
+1. Upload all files in this folder to the root of the GitHub repo connected to Vercel.
+2. Keep texas-hs-game-finder-logo.png in the same folder as index.html.
+3. Commit the changes.
+4. Vercel will redeploy automatically.
+
+No extra image hosting is needed.

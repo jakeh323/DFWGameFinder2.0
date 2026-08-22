@@ -17,7 +17,7 @@ h1{font-size:34px;margin:6px 0 8px}.muted{color:var(--muted)}
 .metric{padding:15px}.metric b{display:block;font-size:26px;margin-top:5px}
 .panel{padding:16px}
 .controls{display:grid;grid-template-columns:1.2fr 1.2fr 1fr 1fr;gap:12px}
-.controls2{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px;margin-top:12px}
+.controls2{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:12px;margin-top:12px}
 label{font-size:13px;color:var(--muted)}
 input,select{width:100%;margin-top:6px;padding:10px;border:1px solid var(--border);background:#0c1627;color:var(--text);border-radius:10px;font:inherit}
 .game{padding:18px;margin:12px 0}
@@ -32,17 +32,34 @@ input,select{width:100%;margin-top:6px;padding:10px;border:1px solid var(--borde
 .note{margin-top:24px;color:var(--muted);font-size:13px;line-height:1.45}
 @media(max-width:780px){.metrics,.details,.controls,.controls2{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:500px){.metrics,.details,.controls,.controls2{grid-template-columns:1fr}.top{flex-direction:column}.score{text-align:left}}
+
+.brand-lockup{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.brand-logo{width:min(360px,100%);height:auto;display:block;border-radius:14px}
+.brand-copy{min-width:260px;flex:1}
+.sport-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.sport-tab{padding:7px 11px;border:1px solid var(--border);background:var(--chip);border-radius:999px;font-size:12px;color:var(--muted)}
+.sport-tab.active{color:var(--text);border-color:var(--accent)}
+
 </style>
 </head>
 <body>
 <div class="wrap">
 <div class="header">
-  <div>
-    <div class="muted">Texas High School Football • Location-aware</div>
-    <h1>Texas HS Game Finder</h1>
-    <div class="muted">40% Team Quality • 35% Recruit Talent • 15% Matchup • 10% Importance</div>
+  <div class="brand-lockup">
+    <img class="brand-logo" src="texas-hs-game-finder-logo.png" alt="Texas HS Game Finder logo featuring football, basketball, baseball, and softball">
+    <div class="brand-copy">
+      <div class="muted">Texas High School Sports • Top games by area</div>
+      <h1>Texas HS Game Finder</h1>
+      <div class="muted">Find and rank the best high school games near you.</div>
+      <div class="sport-tabs" aria-label="Sports">
+        <span class="sport-tab active">Football</span>
+        <span class="sport-tab">Basketball</span>
+        <span class="sport-tab">Baseball</span>
+        <span class="sport-tab">Softball</span>
+      </div>
+    </div>
   </div>
-  <div class="live">Preset Texas locations</div>
+  <div class="live">Top 100 per week & area</div>
 </div>
 
 <div class="metrics">
@@ -93,6 +110,13 @@ input,select{width:100%;margin-top:6px;padding:10px;border:1px solid var(--borde
         <option value="match">Closest Matchup</option>
       </select>
     </label>
+    <label>Max results
+      <select id="limit">
+        <option value="25">Top 25</option>
+        <option value="50">Top 50</option>
+        <option value="100" selected>Top 100</option>
+      </select>
+    </label>
     <label>Preset region
       <select id="quick">
         <option value="">Choose...</option>
@@ -113,7 +137,7 @@ input,select{width:100%;margin-top:6px;padding:10px;border:1px solid var(--borde
 <div id="list"></div>
 
 <div class="note">
-  Distance is straight-line distance from the selected preset city to the game venue, not road mileage. Distance never changes the Game Score; it only filters or sorts games. This version is ready for statewide data, and the current season file can be expanded with additional Texas games while keeping the same interface.
+  Football is the first live sport. Basketball, baseball, and softball are part of the brand and can use the same location, radius, and ranking framework as their seasons are added. Each week uses one statewide master game pool. The selected preset location and radius filter that pool, your 40/35/15/10 model ranks the qualifying games, and the page displays up to the Top 100 for that area. Distance is straight-line distance from the preset city to the venue and never changes the Game Score.
 </div>
 </div>
 
@@ -163,6 +187,7 @@ function render(){
   const q=$('search').value.toLowerCase().trim();
   const min=+$('min').value;
   const sort=$('sort').value;
+  const limit=+$('limit').value;
 
   let arr=wk.games.map(g=>{
     const d=loc ? distanceMiles(loc[0],loc[1],g.lat,g.lng) : null;
@@ -181,12 +206,15 @@ function render(){
     b.score-a.score
   );
 
+  const totalQualifying=arr.length;
+  arr=arr.slice(0,limit);
+
   $('weekMetric').textContent='Week '+$('week').value;
   $('count').textContent=arr.length;
   $('must').textContent=arr.filter(g=>g.score>=93).length;
   $('topscore').textContent=arr.length?Math.max(...arr.map(g=>g.score)):'—';
   $('title').textContent=wk.label;
-  $('subtitle').textContent=`${arr.length} game${arr.length===1?'':'s'} within ${radius>=9999?'all Texas':radius+' miles of '+$('location').value}.`;
+  $('subtitle').textContent=`Top ${Math.min(limit,totalQualifying)} of ${totalQualifying} qualifying game${totalQualifying===1?'':'s'} within ${radius>=9999?'all Texas':radius+' miles of '+$('location').value}.`;
 
   $('list').innerHTML=arr.map((g,i)=>`
     <article class="game">
@@ -229,7 +257,7 @@ Promise.all([
   render();
 });
 
-['location','radius','week','min','sort'].forEach(id=>$(id).addEventListener('change',render));
+['location','radius','week','min','sort','limit'].forEach(id=>$(id).addEventListener('change',render));
 $('search').addEventListener('input',render);
 $('quick').addEventListener('change',()=>{
   if(!$('quick').value) return;
