@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-08-22T19:13:31.594321+00:00",
+  "updatedAt": "2026-08-22T19:24:44.356944+00:00",
   "methodology": {
     "name": "Lone Star Prospect Ranking",
     "note": "Internal ranking based on prospect tier, verified in-state commitment status, and curated watchlist/ranking inputs. It is not a copied recruiting-service composite.",
     "schoolMatching": "Exact school IDs / approved aliases only; no generic substring matching."
   },
-  "playerCount": 156,
+  "playerCount": 155,
   "players": [
     {
       "name": "Jalen Brewster",
@@ -149,22 +149,6 @@
     },
     {
       "name": "Montre Jackson",
-      "school": "Garland Lakeview Centennial",
-      "position": "CB",
-      "classYear": 2027,
-      "prospectScore": 95,
-      "stars": 4,
-      "stateRank": 26,
-      "nationalRank": null,
-      "commitment": "Texas",
-      "tier": "Ranked recruit",
-      "source": "https://www.texasfootball.com/team/texas-longhorns/commitments/2027",
-      "schoolId": "lakeview centennial",
-      "loneStarRank": 10,
-      "sourceType": "public commitment page"
-    },
-    {
-      "name": "Montre Jackson Garland",
       "school": "Lakeview Centennial",
       "schoolId": "lakeview centennial",
       "position": "Cornerback",
@@ -176,7 +160,7 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/texas-longhorns/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 11
+      "loneStarRank": 10
     },
     {
       "name": "Amari Vickerson",
@@ -191,7 +175,7 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/smu-mustangs/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 12
+      "loneStarRank": 11
     },
     {
       "name": "JayQuan Snell",
@@ -206,7 +190,7 @@
       "tier": "Ranked recruit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "waxahachie",
-      "loneStarRank": 13
+      "loneStarRank": 12
     },
     {
       "name": "Kaeden Scott",
@@ -221,7 +205,7 @@
       "tier": "Ranked recruit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "san antonio roosevelt",
-      "loneStarRank": 14
+      "loneStarRank": 13
     },
     {
       "name": "Brian Swanson",
@@ -236,7 +220,7 @@
       "tier": "Ranked recruit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "south oak cliff",
-      "loneStarRank": 15
+      "loneStarRank": 14
     },
     {
       "name": "Kaden McCarty",
@@ -251,7 +235,7 @@
       "tier": "Ranked recruit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "cypress falls",
-      "loneStarRank": 16
+      "loneStarRank": 15
     },
     {
       "name": "Jhadyn Nelson",
@@ -266,7 +250,7 @@
       "tier": "Ranked recruit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "langham creek",
-      "loneStarRank": 17
+      "loneStarRank": 16
     },
     {
       "name": "Braylon Williams",
@@ -281,7 +265,7 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/smu-mustangs/commitments/2027",
       "schoolId": "lamar",
-      "loneStarRank": 18,
+      "loneStarRank": 17,
       "sourceType": "public commitment page"
     },
     {
@@ -297,7 +281,7 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/houston-cougars/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 19
+      "loneStarRank": 18
     },
     {
       "name": "Briceson Thrower",
@@ -312,7 +296,7 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/texas-longhorns/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 20
+      "loneStarRank": 19
     },
     {
       "name": "Karece Hoyt",
@@ -327,7 +311,7 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/baylor-bears/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 21
+      "loneStarRank": 20
     },
     {
       "name": "Khyren Haywood",
@@ -342,7 +326,7 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/texas-tech-red-raiders/commitments/2027",
       "schoolId": "guyer",
-      "loneStarRank": 22,
+      "loneStarRank": 21,
       "sourceType": "public commitment page"
     },
     {
@@ -358,7 +342,7 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/tcu-horned-frogs/commitments/2027",
       "schoolId": "whitney",
-      "loneStarRank": 23,
+      "loneStarRank": 22,
       "sourceType": "public commitment page"
     },
     {
@@ -374,7 +358,7 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/texas-longhorns/commitments/2027",
       "schoolId": "columbus",
-      "loneStarRank": 24,
+      "loneStarRank": 23,
       "sourceType": "public commitment page"
     },
     {
@@ -390,7 +374,7 @@
       "tier": "Ranked recruit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "alvin shadow creek",
-      "loneStarRank": 25
+      "loneStarRank": 24
     },
     {
       "name": "DeMarrion Johnson",
@@ -405,7 +389,7 @@
       "tier": "Ranked recruit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "tyler legacy",
-      "loneStarRank": 26
+      "loneStarRank": 25
     },
     {
       "name": "Qua Ford",
@@ -420,7 +404,7 @@
       "tier": "Ranked recruit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "texarkana texas high",
-      "loneStarRank": 27
+      "loneStarRank": 26
     },
     {
       "name": "Joshua Banks",
@@ -435,7 +419,7 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/texas-tech-red-raiders/commitments/2027",
       "schoolId": "atascocita",
-      "loneStarRank": 28,
+      "loneStarRank": 27,
       "sourceType": "public commitment page"
     },
     {
@@ -451,7 +435,7 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/texas-tech-red-raiders/commitments/2027",
       "schoolId": "desoto",
-      "loneStarRank": 29,
+      "loneStarRank": 28,
       "sourceType": "public commitment page"
     },
     {
@@ -467,7 +451,7 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/texas-longhorns/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 30
+      "loneStarRank": 29
     },
     {
       "name": "Jason Johnson",
@@ -482,7 +466,7 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/texas-longhorns/commitments/2027",
       "schoolId": "atascocita",
-      "loneStarRank": 31,
+      "loneStarRank": 30,
       "sourceType": "public commitment page"
     },
     {
@@ -498,7 +482,7 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/houston-cougars/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 32
+      "loneStarRank": 31
     },
     {
       "name": "Trey Haralson",
@@ -513,7 +497,7 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/smu-mustangs/commitments/2027",
       "schoolId": "tyler",
-      "loneStarRank": 33,
+      "loneStarRank": 32,
       "sourceType": "public commitment page"
     },
     {
@@ -529,7 +513,7 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/baylor-bears/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 34
+      "loneStarRank": 33
     },
     {
       "name": "Davontrae Kirkland",
@@ -544,7 +528,7 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/baylor-bears/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 35
+      "loneStarRank": 34
     },
     {
       "name": "Hunter Haug",
@@ -559,7 +543,7 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/texas-tech-red-raiders/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 36
+      "loneStarRank": 35
     },
     {
       "name": "Brice McCurdy",
@@ -574,7 +558,7 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/tcu-horned-frogs/commitments/2027",
       "schoolId": "robinson",
-      "loneStarRank": 37,
+      "loneStarRank": 36,
       "sourceType": "public commitment page"
     },
     {
@@ -590,7 +574,7 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/houston-cougars/commitments/2027",
       "schoolId": "midlothian",
-      "loneStarRank": 38,
+      "loneStarRank": 37,
       "sourceType": "public commitment page"
     },
     {
@@ -606,7 +590,7 @@
       "tier": "Four-star watchlist",
       "source": "Dave Campbell's Texas Football prospect/watchlist coverage",
       "schoolId": "waxahachie",
-      "loneStarRank": 39
+      "loneStarRank": 38
     },
     {
       "name": "CJ Whaley",
@@ -621,7 +605,7 @@
       "tier": "Four-star watchlist",
       "source": "Dave Campbell's Texas Football prospect/watchlist coverage",
       "schoolId": "atlanta",
-      "loneStarRank": 40
+      "loneStarRank": 39
     },
     {
       "name": "Carter St. Junious",
@@ -636,7 +620,7 @@
       "tier": "Four-star watchlist",
       "source": "Dave Campbell's Texas Football prospect/watchlist coverage",
       "schoolId": "manvel",
-      "loneStarRank": 41
+      "loneStarRank": 40
     },
     {
       "name": "Carter Zingelmann",
@@ -651,7 +635,7 @@
       "tier": "Four-star watchlist",
       "source": "Dave Campbell's Texas Football prospect/watchlist coverage",
       "schoolId": "coppell",
-      "loneStarRank": 42
+      "loneStarRank": 41
     },
     {
       "name": "Jaylen Addai",
@@ -666,7 +650,7 @@
       "tier": "Four-star watchlist",
       "source": "Dave Campbell's Texas Football prospect/watchlist coverage",
       "schoolId": "alvin shadow creek",
-      "loneStarRank": 43
+      "loneStarRank": 42
     },
     {
       "name": "Trey Wright",
@@ -681,7 +665,7 @@
       "tier": "Four-star watchlist",
       "source": "Dave Campbell's Texas Football prospect/watchlist coverage",
       "schoolId": "lone star",
-      "loneStarRank": 44
+      "loneStarRank": 43
     },
     {
       "name": "Aston Whiteside",
@@ -696,7 +680,7 @@
       "tier": "Ranked recruit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "burleson centennial",
-      "loneStarRank": 45
+      "loneStarRank": 44
     },
     {
       "name": "Isaiah Udom",
@@ -711,7 +695,7 @@
       "tier": "Ranked recruit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "south oak cliff",
-      "loneStarRank": 46
+      "loneStarRank": 45
     },
     {
       "name": "Hakim Frampton",
@@ -726,7 +710,7 @@
       "tier": "Ranked recruit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "brandeis",
-      "loneStarRank": 47
+      "loneStarRank": 46
     },
     {
       "name": "Drake Carroll",
@@ -741,7 +725,7 @@
       "tier": "Ranked recruit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "alamo heights",
-      "loneStarRank": 48
+      "loneStarRank": 47
     },
     {
       "name": "Cade Haug",
@@ -756,7 +740,7 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/smu-mustangs/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 49
+      "loneStarRank": 48
     },
     {
       "name": "Jackson Cook",
@@ -771,7 +755,7 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/texas-longhorns/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 50
+      "loneStarRank": 49
     },
     {
       "name": "Darrien Neal",
@@ -786,7 +770,7 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/tcu-horned-frogs/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 51
+      "loneStarRank": 50
     },
     {
       "name": "Braden Baker",
@@ -801,7 +785,7 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/houston-cougars/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 52
+      "loneStarRank": 51
     },
     {
       "name": "Daylon Gordon",
@@ -816,7 +800,7 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/texas-state-bobcats/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 53
+      "loneStarRank": 52
     },
     {
       "name": "Kyron Brown",
@@ -831,7 +815,7 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/texas-longhorns/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 54
+      "loneStarRank": 53
     },
     {
       "name": "Cael Thigpen",
@@ -846,7 +830,7 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/houston-cougars/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 55
+      "loneStarRank": 54
     },
     {
       "name": "Kendray Porter Jr",
@@ -861,7 +845,7 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/houston-cougars/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 56
+      "loneStarRank": 55
     },
     {
       "name": "Cody Smith",
@@ -876,7 +860,7 @@
       "tier": "Rising underclassman",
       "source": "Dave Campbell's Texas Football prospect/watchlist coverage",
       "schoolId": "south oak cliff",
-      "loneStarRank": 57
+      "loneStarRank": 56
     },
     {
       "name": "Damarion Mays",
@@ -891,7 +875,7 @@
       "tier": "Rising underclassman",
       "source": "Dave Campbell's Texas Football prospect/watchlist coverage",
       "schoolId": "north crowley",
-      "loneStarRank": 58
+      "loneStarRank": 57
     },
     {
       "name": "David Dotson",
@@ -906,7 +890,7 @@
       "tier": "Rising underclassman",
       "source": "Dave Campbell's Texas Football prospect/watchlist coverage",
       "schoolId": "atascocita",
-      "loneStarRank": 59
+      "loneStarRank": 58
     },
     {
       "name": "Dez Bryant Jr.",
@@ -921,7 +905,7 @@
       "tier": "Rising underclassman",
       "source": "Dave Campbell's Texas Football prospect/watchlist coverage",
       "schoolId": "southlake carroll",
-      "loneStarRank": 60
+      "loneStarRank": 59
     },
     {
       "name": "Dillon Mitchell",
@@ -936,7 +920,7 @@
       "tier": "Rising underclassman",
       "source": "Dave Campbell's Texas Football prospect/watchlist coverage",
       "schoolId": "sheldon c e king",
-      "loneStarRank": 61
+      "loneStarRank": 60
     },
     {
       "name": "Hayden Green",
@@ -951,7 +935,7 @@
       "tier": "Rising underclassman",
       "source": "Dave Campbell's Texas Football prospect/watchlist coverage",
       "schoolId": "north crowley",
-      "loneStarRank": 62
+      "loneStarRank": 61
     },
     {
       "name": "James Foster III",
@@ -966,7 +950,7 @@
       "tier": "Rising underclassman",
       "source": "Dave Campbell's Texas Football prospect/watchlist coverage",
       "schoolId": "lancaster",
-      "loneStarRank": 63
+      "loneStarRank": 62
     },
     {
       "name": "Kade Smith",
@@ -981,7 +965,7 @@
       "tier": "Rising underclassman",
       "source": "Dave Campbell's Texas Football prospect/watchlist coverage",
       "schoolId": "north crowley",
-      "loneStarRank": 64
+      "loneStarRank": 63
     },
     {
       "name": "Kendrick Harris",
@@ -996,7 +980,7 @@
       "tier": "Rising underclassman",
       "source": "Dave Campbell's Texas Football prospect/watchlist coverage",
       "schoolId": "duncanville",
-      "loneStarRank": 65
+      "loneStarRank": 64
     },
     {
       "name": "Landan Adams",
@@ -1011,7 +995,7 @@
       "tier": "Rising underclassman",
       "source": "Dave Campbell's Texas Football prospect/watchlist coverage",
       "schoolId": "desoto",
-      "loneStarRank": 66
+      "loneStarRank": 65
     },
     {
       "name": "Logan Lokey",
@@ -1026,7 +1010,7 @@
       "tier": "Rising underclassman",
       "source": "Dave Campbell's Texas Football prospect/watchlist coverage",
       "schoolId": "guyer",
-      "loneStarRank": 67
+      "loneStarRank": 66
     },
     {
       "name": "Reagan Smith",
@@ -1041,7 +1025,7 @@
       "tier": "Rising underclassman",
       "source": "Dave Campbell's Texas Football prospect/watchlist coverage",
       "schoolId": "pflugerville weiss",
-      "loneStarRank": 68
+      "loneStarRank": 67
     },
     {
       "name": "AJ Phillips",
@@ -1056,7 +1040,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/utsa-roadrunners/commitments/2027",
       "schoolId": "franklin",
-      "loneStarRank": 69,
+      "loneStarRank": 68,
       "sourceType": "public commitment page"
     },
     {
@@ -1072,7 +1056,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/texas-state-bobcats/commitments/2027",
       "schoolId": "duncanville",
-      "loneStarRank": 70,
+      "loneStarRank": 69,
       "sourceType": "public commitment page"
     },
     {
@@ -1088,7 +1072,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/tcu-horned-frogs/commitments/2027",
       "schoolId": "crowley",
-      "loneStarRank": 71,
+      "loneStarRank": 70,
       "sourceType": "public commitment page"
     },
     {
@@ -1104,7 +1088,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/texas-state-bobcats/commitments/2027",
       "schoolId": "westfield",
-      "loneStarRank": 72,
+      "loneStarRank": 71,
       "sourceType": "public commitment page"
     },
     {
@@ -1120,7 +1104,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/sam-houston-bearkats/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 73
+      "loneStarRank": 72
     },
     {
       "name": "Ayden Williams",
@@ -1135,7 +1119,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/utep-miners/commitments/2027",
       "schoolId": "sotomayor",
-      "loneStarRank": 74,
+      "loneStarRank": 73,
       "sourceType": "public commitment page"
     },
     {
@@ -1151,7 +1135,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/sam-houston-bearkats/commitments/2027",
       "schoolId": "aubrey",
-      "loneStarRank": 75,
+      "loneStarRank": 74,
       "sourceType": "public commitment page"
     },
     {
@@ -1167,7 +1151,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/tcu-horned-frogs/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 76
+      "loneStarRank": 75
     },
     {
       "name": "Breon Williams",
@@ -1182,7 +1166,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/texas-state-bobcats/commitments/2027",
       "schoolId": "marshall",
-      "loneStarRank": 77,
+      "loneStarRank": 76,
       "sourceType": "public commitment page"
     },
     {
@@ -1198,7 +1182,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/texas-state-bobcats/commitments/2027",
       "schoolId": "atascocita",
-      "loneStarRank": 78,
+      "loneStarRank": 77,
       "sourceType": "public commitment page"
     },
     {
@@ -1214,7 +1198,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/smu-mustangs/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 79
+      "loneStarRank": 78
     },
     {
       "name": "Caleb Peagler",
@@ -1229,7 +1213,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/utsa-roadrunners/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 80
+      "loneStarRank": 79
     },
     {
       "name": "Cameron Grady",
@@ -1244,7 +1228,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/utsa-roadrunners/commitments/2027",
       "schoolId": "sotomayor",
-      "loneStarRank": 81,
+      "loneStarRank": 80,
       "sourceType": "public commitment page"
     },
     {
@@ -1260,7 +1244,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/tcu-horned-frogs/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 82
+      "loneStarRank": 81
     },
     {
       "name": "Chase Allen Cypress",
@@ -1275,7 +1259,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/baylor-bears/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 83
+      "loneStarRank": 82
     },
     {
       "name": "Colton Steed",
@@ -1290,7 +1274,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/tcu-horned-frogs/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 84
+      "loneStarRank": 83
     },
     {
       "name": "Davis Lee",
@@ -1305,7 +1289,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/north-texas-mean-green/commitments/2027",
       "schoolId": "brock",
-      "loneStarRank": 85,
+      "loneStarRank": 84,
       "sourceType": "public commitment page"
     },
     {
@@ -1321,7 +1305,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/baylor-bears/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 86
+      "loneStarRank": 85
     },
     {
       "name": "Dj Henderson",
@@ -1336,7 +1320,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/north-texas-mean-green/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 87
+      "loneStarRank": 86
     },
     {
       "name": "Dontae Perkins",
@@ -1351,7 +1335,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/texas-tech-red-raiders/commitments/2027",
       "schoolId": "westfield",
-      "loneStarRank": 88,
+      "loneStarRank": 87,
       "sourceType": "public commitment page"
     },
     {
@@ -1367,7 +1351,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/tcu-horned-frogs/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 89
+      "loneStarRank": 88
     },
     {
       "name": "Dylan Medlock",
@@ -1382,7 +1366,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/utsa-roadrunners/commitments/2027",
       "schoolId": "robinson",
-      "loneStarRank": 90,
+      "loneStarRank": 89,
       "sourceType": "public commitment page"
     },
     {
@@ -1398,7 +1382,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/sam-houston-bearkats/commitments/2027",
       "schoolId": "prosper",
-      "loneStarRank": 91,
+      "loneStarRank": 90,
       "sourceType": "public commitment page"
     },
     {
@@ -1414,7 +1398,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/texas-state-bobcats/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 92
+      "loneStarRank": 91
     },
     {
       "name": "Ethan Boyd",
@@ -1429,7 +1413,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/utsa-roadrunners/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 93
+      "loneStarRank": 92
     },
     {
       "name": "Ethan Williams",
@@ -1444,7 +1428,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/north-texas-mean-green/commitments/2027",
       "schoolId": "travis",
-      "loneStarRank": 94,
+      "loneStarRank": 93,
       "sourceType": "public commitment page"
     },
     {
@@ -1460,7 +1444,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/north-texas-mean-green/commitments/2027",
       "schoolId": "north crowley",
-      "loneStarRank": 95,
+      "loneStarRank": 94,
       "sourceType": "public commitment page"
     },
     {
@@ -1476,7 +1460,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/north-texas-mean-green/commitments/2027",
       "schoolId": "waxahachie",
-      "loneStarRank": 96,
+      "loneStarRank": 95,
       "sourceType": "public commitment page"
     },
     {
@@ -1492,7 +1476,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/baylor-bears/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 97
+      "loneStarRank": 96
     },
     {
       "name": "Isaiah Rasheed",
@@ -1507,7 +1491,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/north-texas-mean-green/commitments/2027",
       "schoolId": "atascocita",
-      "loneStarRank": 98,
+      "loneStarRank": 97,
       "sourceType": "public commitment page"
     },
     {
@@ -1523,7 +1507,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/texas-state-bobcats/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 99
+      "loneStarRank": 98
     },
     {
       "name": "Jackson Hooker",
@@ -1538,7 +1522,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/rice-owls/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 100
+      "loneStarRank": 99
     },
     {
       "name": "Jacob Lee",
@@ -1553,7 +1537,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/rice-owls/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 101
+      "loneStarRank": 100
     },
     {
       "name": "Jacobie Wilkerson",
@@ -1568,7 +1552,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/north-texas-mean-green/commitments/2027",
       "schoolId": "allen",
-      "loneStarRank": 102,
+      "loneStarRank": 101,
       "sourceType": "public commitment page"
     },
     {
@@ -1584,7 +1568,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/texas-state-bobcats/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 103
+      "loneStarRank": 102
     },
     {
       "name": "Johnnie Fitzgerald",
@@ -1599,7 +1583,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/north-texas-mean-green/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 104
+      "loneStarRank": 103
     },
     {
       "name": "Jordan Smith",
@@ -1614,7 +1598,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/utsa-roadrunners/commitments/2027",
       "schoolId": "waxahachie",
-      "loneStarRank": 105,
+      "loneStarRank": 104,
       "sourceType": "public commitment page"
     },
     {
@@ -1630,7 +1614,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/utep-miners/commitments/2027",
       "schoolId": "travis",
-      "loneStarRank": 106,
+      "loneStarRank": 105,
       "sourceType": "public commitment page"
     },
     {
@@ -1646,7 +1630,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/north-texas-mean-green/commitments/2027",
       "schoolId": "ryan",
-      "loneStarRank": 107,
+      "loneStarRank": 106,
       "sourceType": "public commitment page"
     },
     {
@@ -1662,7 +1646,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/utsa-roadrunners/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 108
+      "loneStarRank": 107
     },
     {
       "name": "Khylan Davis",
@@ -1677,7 +1661,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/utsa-roadrunners/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 109
+      "loneStarRank": 108
     },
     {
       "name": "Kolton Prox",
@@ -1692,7 +1676,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/north-texas-mean-green/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 110
+      "loneStarRank": 109
     },
     {
       "name": "Landon Foster",
@@ -1707,7 +1691,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/utsa-roadrunners/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 111
+      "loneStarRank": 110
     },
     {
       "name": "Liam Madkins",
@@ -1722,7 +1706,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/texas-state-bobcats/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 112
+      "loneStarRank": 111
     },
     {
       "name": "Logan Debose",
@@ -1737,7 +1721,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/houston-cougars/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 113
+      "loneStarRank": 112
     },
     {
       "name": "Manny Leyja",
@@ -1752,7 +1736,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/north-texas-mean-green/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 114
+      "loneStarRank": 113
     },
     {
       "name": "Mason Johnson",
@@ -1767,7 +1751,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/north-texas-mean-green/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 115
+      "loneStarRank": 114
     },
     {
       "name": "Mo Poko",
@@ -1782,7 +1766,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/houston-cougars/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 116
+      "loneStarRank": 115
     },
     {
       "name": "Noah Johnson",
@@ -1797,7 +1781,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/baylor-bears/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 117
+      "loneStarRank": 116
     },
     {
       "name": "Noah Smith",
@@ -1812,7 +1796,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/north-texas-mean-green/commitments/2027",
       "schoolId": "angleton",
-      "loneStarRank": 118,
+      "loneStarRank": 117,
       "sourceType": "public commitment page"
     },
     {
@@ -1828,7 +1812,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/utsa-roadrunners/commitments/2027",
       "schoolId": "montgomery",
-      "loneStarRank": 119,
+      "loneStarRank": 118,
       "sourceType": "public commitment page"
     },
     {
@@ -1844,7 +1828,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/utep-miners/commitments/2027",
       "schoolId": "randle",
-      "loneStarRank": 120,
+      "loneStarRank": 119,
       "sourceType": "public commitment page"
     },
     {
@@ -1860,7 +1844,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/north-texas-mean-green/commitments/2027",
       "schoolId": "guyer",
-      "loneStarRank": 121,
+      "loneStarRank": 120,
       "sourceType": "public commitment page"
     },
     {
@@ -1876,7 +1860,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/utsa-roadrunners/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 122
+      "loneStarRank": 121
     },
     {
       "name": "Ryan Taylor",
@@ -1891,7 +1875,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/utsa-roadrunners/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 123
+      "loneStarRank": 122
     },
     {
       "name": "Samuel Thiergood",
@@ -1906,7 +1890,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/houston-cougars/commitments/2027",
       "schoolId": "randle",
-      "loneStarRank": 124,
+      "loneStarRank": 123,
       "sourceType": "public commitment page"
     },
     {
@@ -1922,7 +1906,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/utep-miners/commitments/2027",
       "schoolId": "manvel",
-      "loneStarRank": 125,
+      "loneStarRank": 124,
       "sourceType": "public commitment page"
     },
     {
@@ -1938,7 +1922,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/houston-cougars/commitments/2027",
       "schoolId": "atascocita",
-      "loneStarRank": 126,
+      "loneStarRank": 125,
       "sourceType": "public commitment page"
     },
     {
@@ -1954,7 +1938,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/tcu-horned-frogs/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 127
+      "loneStarRank": 126
     },
     {
       "name": "Victor Scott",
@@ -1969,7 +1953,7 @@
       "tier": "College commit",
       "source": "https://www.texasfootball.com/team/north-texas-mean-green/commitments/2027",
       "schoolId": "lancaster",
-      "loneStarRank": 128,
+      "loneStarRank": 127,
       "sourceType": "public commitment page"
     },
     {
@@ -1985,7 +1969,7 @@
       "tier": "College commit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "north forney",
-      "loneStarRank": 129
+      "loneStarRank": 128
     },
     {
       "name": "Aiden Evans",
@@ -2000,7 +1984,7 @@
       "tier": "College commit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "lewisville",
-      "loneStarRank": 130
+      "loneStarRank": 129
     },
     {
       "name": "Anthony Moss",
@@ -2015,7 +1999,7 @@
       "tier": "College commit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "guyer",
-      "loneStarRank": 131
+      "loneStarRank": 130
     },
     {
       "name": "Austin Holcomb",
@@ -2030,7 +2014,7 @@
       "tier": "College commit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "cypress bridgeland",
-      "loneStarRank": 132
+      "loneStarRank": 131
     },
     {
       "name": "Avery Timms",
@@ -2045,7 +2029,7 @@
       "tier": "College commit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "killeen",
-      "loneStarRank": 133
+      "loneStarRank": 132
     },
     {
       "name": "Cayden Williams",
@@ -2060,7 +2044,7 @@
       "tier": "College commit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "willis",
-      "loneStarRank": 134
+      "loneStarRank": 133
     },
     {
       "name": "Chase Allen",
@@ -2075,7 +2059,7 @@
       "tier": "College commit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "cypress bridgeland",
-      "loneStarRank": 135
+      "loneStarRank": 134
     },
     {
       "name": "Dalton Walker",
@@ -2090,7 +2074,7 @@
       "tier": "College commit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "elkhart",
-      "loneStarRank": 136
+      "loneStarRank": 135
     },
     {
       "name": "Devin Robinson",
@@ -2105,7 +2089,7 @@
       "tier": "College commit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "lewisville",
-      "loneStarRank": 137
+      "loneStarRank": 136
     },
     {
       "name": "Gavin Mandrell",
@@ -2120,7 +2104,7 @@
       "tier": "College commit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "denison",
-      "loneStarRank": 138
+      "loneStarRank": 137
     },
     {
       "name": "Grant Sweeney",
@@ -2135,7 +2119,7 @@
       "tier": "College commit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "boerne",
-      "loneStarRank": 139
+      "loneStarRank": 138
     },
     {
       "name": "Henry Brooks",
@@ -2150,7 +2134,7 @@
       "tier": "College commit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "cy fair",
-      "loneStarRank": 140
+      "loneStarRank": 139
     },
     {
       "name": "Jailon Hicks",
@@ -2165,7 +2149,7 @@
       "tier": "College commit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "west mesquite",
-      "loneStarRank": 141
+      "loneStarRank": 140
     },
     {
       "name": "Johnny Hamilton III",
@@ -2180,7 +2164,7 @@
       "tier": "College commit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "longview",
-      "loneStarRank": 142
+      "loneStarRank": 141
     },
     {
       "name": "Jyrion Hampton",
@@ -2195,7 +2179,7 @@
       "tier": "College commit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "south oak cliff",
-      "loneStarRank": 143
+      "loneStarRank": 142
     },
     {
       "name": "Kailon Walker",
@@ -2210,7 +2194,7 @@
       "tier": "College commit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "beaumont west brook",
-      "loneStarRank": 144
+      "loneStarRank": 143
     },
     {
       "name": "Kamryn Harris",
@@ -2225,7 +2209,7 @@
       "tier": "College commit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "pearland",
-      "loneStarRank": 145
+      "loneStarRank": 144
     },
     {
       "name": "Laiton Springer",
@@ -2240,7 +2224,7 @@
       "tier": "College commit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "san antonio pieper",
-      "loneStarRank": 146
+      "loneStarRank": 145
     },
     {
       "name": "Matt Zeigler",
@@ -2255,7 +2239,7 @@
       "tier": "College commit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "copperas cove",
-      "loneStarRank": 147
+      "loneStarRank": 146
     },
     {
       "name": "Maxwell Nichols",
@@ -2270,7 +2254,7 @@
       "tier": "College commit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "bowie",
-      "loneStarRank": 148
+      "loneStarRank": 147
     },
     {
       "name": "Mehki Jessie",
@@ -2285,7 +2269,7 @@
       "tier": "College commit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "richardson berkner",
-      "loneStarRank": 149
+      "loneStarRank": 148
     },
     {
       "name": "Michael Keen",
@@ -2300,7 +2284,7 @@
       "tier": "College commit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "columbia",
-      "loneStarRank": 150
+      "loneStarRank": 149
     },
     {
       "name": "Neree Castleberry",
@@ -2315,7 +2299,7 @@
       "tier": "College commit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "winnsboro",
-      "loneStarRank": 151
+      "loneStarRank": 150
     },
     {
       "name": "Ola Orebe",
@@ -2330,7 +2314,7 @@
       "tier": "College commit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "saginaw boswell",
-      "loneStarRank": 152
+      "loneStarRank": 151
     },
     {
       "name": "Shandan Love",
@@ -2345,7 +2329,7 @@
       "tier": "College commit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "denison",
-      "loneStarRank": 153
+      "loneStarRank": 152
     },
     {
       "name": "Simon Johnson-Watson",
@@ -2360,7 +2344,7 @@
       "tier": "College commit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "austin hyde park",
-      "loneStarRank": 154
+      "loneStarRank": 153
     },
     {
       "name": "Thomas Muiruri",
@@ -2375,7 +2359,7 @@
       "tier": "College commit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "haslet eaton",
-      "loneStarRank": 155
+      "loneStarRank": 154
     },
     {
       "name": "Trason Haley",
@@ -2390,7 +2374,7 @@
       "tier": "College commit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "sachse",
-      "loneStarRank": 156
+      "loneStarRank": 155
     }
   ]
 }
