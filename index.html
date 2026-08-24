@@ -1,0 +1,904 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Texas HS Game Finder</title>
+<style>
+:root{--bg:#08101d;--panel:#111b2d;--text:#f7f8fb;--muted:#a7b3c7;--accent:#4f8cff;--border:#293853;--chip:#162742}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,#08101d,#0f1829);color:var(--text);font-family:Arial,Helvetica,sans-serif}
+.wrap{max-width:1120px;margin:auto;padding:24px}
+.header{display:flex;justify-content:space-between;gap:16px;align-items:end;flex-wrap:wrap}
+h1{font-size:34px;margin:6px 0 8px}.muted{color:var(--muted)}
+.live{padding:8px 11px;border:1px solid var(--border);background:var(--chip);border-radius:999px;font-size:13px}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0}
+.metric,.panel,.game{background:var(--panel);border:1px solid var(--border);border-radius:16px}
+.metric{padding:15px}.metric b{display:block;font-size:26px;margin-top:5px}
+.panel{padding:16px}
+.controls{display:grid;grid-template-columns:1.2fr 1.2fr 1fr 1fr;gap:12px}
+.controls2{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:12px;margin-top:12px}
+label{font-size:13px;color:var(--muted)}
+input,select{width:100%;margin-top:6px;padding:10px;border:1px solid var(--border);background:#0c1627;color:var(--text);border-radius:10px;font:inherit}
+.game{padding:18px;margin:12px 0}
+.top{display:flex;justify-content:space-between;gap:14px}
+.match{font-size:19px;font-weight:700}
+.score{font-size:30px;font-weight:700;color:var(--accent);text-align:right}
+.badge,.distance{display:inline-block;border:1px solid var(--border);background:var(--chip);border-radius:999px;padding:5px 9px;font-size:12px}
+.badge{margin-top:5px}.distance{margin-top:7px}
+.track{height:10px;background:#26344c;border-radius:999px;overflow:hidden;margin:13px 0}.fill{height:100%;background:var(--accent)}
+.details{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;border-top:1px solid var(--border);padding-top:13px}
+.details span{display:block;color:var(--muted);font-size:12px}
+.note{margin-top:24px;color:var(--muted);font-size:13px;line-height:1.45}
+@media(max-width:780px){.metrics,.details,.controls,.controls2{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.metrics,.details,.controls,.controls2{grid-template-columns:1fr}.top{flex-direction:column}.score{text-align:left}}
+
+.brand-lockup{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.brand-logo{width:min(340px,100%);height:auto;display:block;border-radius:14px}
+.brand-copy{min-width:260px;flex:1}
+.sport-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.sport-tab{padding:7px 11px;border:1px solid var(--border);background:var(--chip);border-radius:999px;font-size:12px;color:var(--muted)}
+.sport-tab.active{color:var(--text);border-color:var(--accent)}
+
+.players-watch{margin-top:14px;border-top:1px solid var(--border);padding-top:12px}
+.players-watch-title{font-weight:700;margin-bottom:8px}
+.player-row{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.player-row:last-child{border-bottom:0}
+.player-main{min-width:0}
+.player-name{font-weight:700}
+.player-meta{font-size:12px;color:var(--muted);margin-top:2px}
+.player-commit{font-size:12px;color:var(--text);white-space:nowrap}
+.star{color:#f5c451}
+
+.weights-panel{margin-top:16px}
+.weights-head{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.weights-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.weight-item{min-width:0}
+.weight-item .weight-label{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.weight-item input[type=range]{width:100%;margin-top:8px}
+.reset-weights{border:1px solid var(--border);background:#0c1627;color:var(--text);border-radius:10px;padding:9px 12px;cursor:pointer}
+.weight-note{margin-top:10px;font-size:12px;color:var(--muted)}
+@media(max-width:780px){.weights-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.weights-grid{grid-template-columns:1fr}}
+
+.football-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 14px}
+.football-tab{border:1px solid var(--border);background:#0c1627;color:var(--muted);border-radius:999px;padding:10px 14px;cursor:pointer;font-weight:700}
+.football-tab.active{background:var(--accent);color:white;border-color:var(--accent)}
+.tab-pane{display:none}
+.tab-pane.active{display:block}
+.rank-table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:16px;background:var(--panel)}
+.rank-table{width:100%;border-collapse:collapse;min-width:900px}
+.rank-table th,.rank-table td{padding:12px 14px;border-bottom:1px solid var(--border);text-align:left}
+.rank-table th{font-size:12px;color:var(--muted);background:#0c1627;position:sticky;top:0}
+.rank-table tr:last-child td{border-bottom:0}
+.rank-num{font-weight:800;color:var(--accent)}
+.rank-controls{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px;margin-bottom:12px}
+.prospect-badge{display:inline-block;border:1px solid var(--border);background:var(--chip);border-radius:999px;padding:4px 8px;font-size:11px}
+@media(max-width:700px){.rank-controls{grid-template-columns:1fr}}
+
+@media(max-width:700px){}
+
+.team-search-row{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center}
+.team-search-row input{min-width:0}
+.team-search-btn{border:1px solid var(--border);background:var(--accent);color:#fff;border-radius:10px;padding:11px 14px;font-weight:700;cursor:pointer;min-height:44px}
+@media(max-width:520px){.team-search-row{grid-template-columns:1fr}.team-search-btn{width:100%}}
+
+.team-search-row{position:relative}
+.team-suggestions{margin-top:6px;border:1px solid var(--border);border-radius:12px;background:var(--panel);overflow:hidden;max-height:260px;overflow-y:auto}
+.team-suggestion{display:block;width:100%;text-align:left;border:0;border-bottom:1px solid var(--border);background:transparent;color:var(--text);padding:11px 12px;cursor:pointer}
+.team-suggestion:last-child{border-bottom:0}
+.team-suggestion small{display:block;color:var(--muted);margin-top:2px}
+.team-suggestion:focus,.team-suggestion:hover{background:var(--chip)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="header">
+  <div class="brand-lockup">
+    <img class="brand-logo" src="texas-hs-game-finder-logo.png" alt="Texas HS Game Finder logo for football, basketball, baseball, and softball">
+    <div class="brand-copy">
+      <div class="muted">Texas High School Sports • Best games near you</div>
+      <h1>Texas HS Game Finder</h1>
+      <div class="muted">Football rankings powered by team quality, recruit talent, matchup quality, and importance.</div>
+      <div class="sport-tabs">
+        <span class="sport-tab active">Football</span>
+        <span class="sport-tab">Basketball</span>
+        <span class="sport-tab">Baseball</span>
+        <span class="sport-tab">Softball</span>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+<div class="football-tabs" role="tablist" aria-label="Football views">
+  <button type="button" class="football-tab active" data-tab="gamesPane">Top Games</button>
+  <button type="button" class="football-tab" data-tab="teamsPane">Team Rankings</button>
+  <button type="button" class="football-tab" data-tab="playersPane">Player Rankings</button>
+</div>
+
+<div id="gamesPane" class="tab-pane active">
+<div class="metrics">
+  <div class="metric"><span class="muted">Current week</span><b id="weekMetric">—</b></div>
+  <div class="metric"><span class="muted">Games shown</span><b id="count">—</b></div>
+  <div class="metric"><span class="muted">Must-see</span><b id="must">—</b></div>
+  <div class="metric"><span class="muted">Top score</span><b id="topscore">—</b></div>
+</div>
+
+<div class="panel">
+  <div class="controls">
+    <label>Location
+      <select id="location"></select>
+    </label>
+    <label>Preferred radius
+      <select id="radius">
+        <option value="25">25 miles</option>
+        <option value="50">50 miles</option>
+        <option value="75">75 miles</option>
+        <option value="100" selected>100 miles</option>
+        <option value="150">150 miles</option>
+        <option value="250">250 miles</option>
+        <option value="9999">All Texas</option>
+      </select>
+    </label>
+    <label>Week
+      <select id="week"></select>
+    </label>
+    
+  </div>
+  <div class="controls2">
+    <label>Search team
+  <div class="team-search-row">
+    <input id="search" placeholder="Duncanville, Westlake, North Shore..." aria-describedby="teamSearchHint">
+    <button type="button" id="teamSearchButton" class="team-search-btn">Search</button>
+  </div>
+<div id="teamSearchHint" class="muted" style="font-size:11px;margin-top:6px">Press Enter or tap Search.</div>
+<div id="teamSuggestions" class="team-suggestions" hidden></div>
+</label>
+    
+<label>College commit
+  <select id="collegeFilter">
+    <option value="">All colleges</option>
+  </select>
+</label>
+
+<label>Sort
+      <select id="sort">
+        <option value="score">Game Score</option>
+        <option value="distance">Closest</option>
+        <option value="recruit">Recruit Talent</option>
+        <option value="team">Team Quality</option>
+        <option value="match">Closest Matchup</option>
+      </select>
+    </label>
+    
+    <label>Preset region
+      <select id="quick">
+        <option value="">Choose...</option>
+        <option value="Dallas|25">DFW — 25 mi</option>
+        <option value="Austin|25">Austin — 25 mi</option>
+        <option value="Houston|25">Houston — 25 mi</option>
+        <option value="San Antonio|25">San Antonio — 25 mi</option>
+        <option value="Waco|100">Central Texas — 100 mi</option>
+        <option value="Midland/Odessa|150">West Texas — 150 mi</option>
+        <option value="Dallas|9999">All Texas</option>
+      </select>
+    </label>
+  </div>
+</div>
+
+<div class="panel weights-panel">
+  <div class="weights-head">
+    <div>
+      <strong>Game Score Weights</strong>
+      <div class="muted" style="font-size:12px;margin-top:3px">Customize what matters most. Scores are normalized automatically.</div>
+    </div>
+    <button type="button" class="reset-weights" id="resetWeights">Reset 40 / 35 / 15 / 10</button>
+  </div>
+  <div class="weights-grid">
+    <label class="weight-item">
+      <span class="weight-label"><span>Team Quality</span><b id="wTeamLabel">40%</b></span>
+      <input id="wTeam" type="range" min="0" max="100" value="40">
+    </label>
+    <label class="weight-item">
+      <span class="weight-label"><span>Recruit Talent</span><b id="wRecruitLabel">35%</b></span>
+      <input id="wRecruit" type="range" min="0" max="100" value="35">
+    </label>
+    <label class="weight-item">
+      <span class="weight-label"><span>Matchup Quality</span><b id="wMatchLabel">15%</b></span>
+      <input id="wMatch" type="range" min="0" max="100" value="15">
+    </label>
+    <label class="weight-item">
+      <span class="weight-label"><span>Importance</span><b id="wImportanceLabel">10%</b></span>
+      <input id="wImportance" type="range" min="0" max="100" value="10">
+    </label>
+  </div>
+  <div class="weight-note" id="weightNote">Weights total 100%.</div>
+</div>
+
+<h2 id="title"></h2>
+<div class="muted" style="font-size:12px;margin:-6px 0 14px">Only games inside the selected preset radius are shown.</div>
+<div class="muted" id="subtitle"></div>
+<div id="list"></div>
+
+</div>
+
+<div id="teamsPane" class="tab-pane">
+<div class="panel">
+  <div class="rank-controls">
+    <label>Search team<input id="teamRankSearch" placeholder="North Crowley, Westlake..."></label>
+    <label>Classification<select id="teamClassFilter"><option value="">All classes</option><option>6A</option><option>5A</option><option>4A</option><option>3A</option><option>2A</option><option>1A</option></select></label>
+    <label>Show<select id="teamRankLimit"><option value="25">Top 25</option><option value="50" selected>Top 50</option><option value="100">Top 100</option></select></label>
+  </div>
+  <div class="rank-table-wrap"><table class="rank-table"><thead><tr><th>Rank</th><th>Team</th><th>Class</th><th>Record</th><th>Lone Star Rating</th><th>SOS</th><th>Margin</th><th>Recent</th></tr></thead><tbody id="teamRankBody"></tbody></table></div>
+</div>
+</div>
+
+<div id="playersPane" class="tab-pane">
+<div class="panel">
+  <div class="rank-controls">
+    <label>Search player or school<input id="playerRankSearch" placeholder="Player, school..."></label>
+    <label>Class year<select id="playerClassFilter"><option value="">All years</option><option value="2027">2027</option><option value="2028">2028</option></select></label>
+    <label>Show<select id="playerRankLimit"><option value="25">Top 25</option><option value="50" selected>Top 50</option><option value="100">Top 100</option></select></label>
+  </div>
+  <div class="rank-table-wrap"><table class="rank-table"><thead><tr><th>Lone Star Rank</th><th>Player</th><th>School</th><th>Pos</th><th>Class</th><th>Lone Star Score</th><th>TX Rank</th><th>Commitment</th><th>Tier</th></tr></thead><tbody id="playerRankBody"></tbody></table></div>
+</div>
+</div>
+
+<div class="note">
+<b>Area-first ranking:</b> your selected location and radius are a hard filter. The app only considers games inside that range, then ranks those games using 40% Team Quality, 35% Recruit Talent, 15% Matchup Quality, and 10% Importance. If fewer than 30 games appear, that means the current schedule index needs more games from that specific area — the app will never fill the list with farther-away games.
+</div>
+</div>
+<script>
+let weeks={}, locations={}, recruits=[], teamRankings=[];
+const $=id=>document.getElementById(id);
+
+function currentWeights(){
+  const raw={
+    team:+$('wTeam').value,
+    recruit:+$('wRecruit').value,
+    match:+$('wMatch').value,
+    importance:+$('wImportance').value
+  };
+  const total=raw.team+raw.recruit+raw.match+raw.importance;
+  const denom=total||1;
+  return {
+    ...raw,
+    total,
+    teamN:raw.team/denom,
+    recruitN:raw.recruit/denom,
+    matchN:raw.match/denom,
+    importanceN:raw.importance/denom
+  };
+}
+function score(g){
+  const w=currentWeights();
+  return Math.round(
+    g.teamQuality*w.teamN +
+    g.recruitTalent*w.recruitN +
+    g.matchupQuality*w.matchN +
+    g.importance*w.importanceN
+  );
+}
+function updateWeightLabels(){
+  const w=currentWeights();
+  $('wTeamLabel').textContent=w.team+'%';
+  $('wRecruitLabel').textContent=w.recruit+'%';
+  $('wMatchLabel').textContent=w.match+'%';
+  $('wImportanceLabel').textContent=w.importance+'%';
+  $('weightNote').textContent=w.total===100
+    ? 'Weights total 100%.'
+    : `Weights total ${w.total}%; Game Scores are normalized back to a 0–100 scale.`;
+}
+
+function badge(s){
+  return s>=93?'🔥 Must See':s>=87?'⭐ Excellent':s>=80?'👀 Worth Watching':'Solid Matchup';
+}
+
+function distanceMiles(lat1,lon1,lat2,lon2){
+  if([lat1,lon1,lat2,lon2].some(v=>v===null||v===undefined)) return null;
+  const R=3958.8;
+  const r=Math.PI/180;
+  const dLat=(lat2-lat1)*r, dLon=(lon2-lon1)*r;
+  const a=Math.sin(dLat/2)**2 + Math.cos(lat1*r)*Math.cos(lat2*r)*Math.sin(dLon/2)**2;
+  return R*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
+}
+
+function todayCentral(){
+  return new Date(new Date().toLocaleString('en-US',{timeZone:'America/Chicago'}));
+}
+
+function chooseWeek(){
+  const t=todayCentral();
+  for(const [k,w] of Object.entries(weeks)){
+    const s=new Date(w.start+'T00:00:00'), e=new Date(w.end+'T23:59:59');
+    if(t>=s && t<=e) return k;
+  }
+  let best='1',dist=Infinity;
+  for(const [k,w] of Object.entries(weeks)){
+    const d=Math.abs(t-new Date(w.start+'T00:00:00'));
+    if(d<dist){dist=d;best=k}
+  }
+  return best;
+}
+
+
+function nrm(s=''){
+  return String(s).toLowerCase()
+    .replace(/\([^)]*\)/g,'')
+    .replace(/high school|hs/g,' ')
+    .replace(/[^a-z0-9]+/g,' ')
+    .replace(/\s+/g,' ')
+    .trim();
+}
+function schoolMatch(playerSchool, teamName){
+  const a=nrm(playerSchool), b=nrm(teamName);
+  if(!a || !b) return false;
+
+  if(a === b) return true;
+
+  const aliases = {
+    "humble atascocita":"atascocita",
+    "humble summer creek":"summer creek",
+    "galena park north shore":"north shore",
+    "austin westlake":"westlake",
+    "schertz cibolo steele":"steele",
+    "garland lakeview centennial":"lakeview centennial",
+    "houston langham creek":"langham creek",
+    "spring westfield":"westfield",
+    "richmond randle":"randle",
+    "fort bend travis":"travis",
+    "san antonio brandeis":"brandeis",
+    "san antonio sotomayor":"sotomayor",
+    "frisco lone star":"lone star",
+    "denton guyer":"guyer",
+    "denton ryan":"ryan",
+    "arlington bowie":"bowie",
+    "arlington lamar":"lamar",
+    "mansfield summit":"summit",
+    "mansfield lake ridge":"lake ridge",
+    "prosper walnut grove":"walnut grove",
+    "odessa permian":"permian",
+    "amarillo palo duro":"palo duro"
+  };
+
+  const canon = s => aliases[s] || s;
+  return canon(a) === canon(b);
+}
+
+function cleanProspectName(p){
+  let name=String(p.name||'').trim();
+  if(!name) return name;
+
+  const school=nrm(p.school||'');
+  const aliases={
+    "humble atascocita":"atascocita",
+    "humble summer creek":"summer creek",
+    "galena park north shore":"north shore",
+    "austin westlake":"westlake",
+    "schertz cibolo steele":"steele",
+    "garland lakeview centennial":"lakeview centennial",
+    "houston langham creek":"langham creek",
+    "spring westfield":"westfield",
+    "richmond randle":"randle",
+    "fort bend travis":"travis",
+    "san antonio brandeis":"brandeis",
+    "san antonio sotomayor":"sotomayor",
+    "frisco lone star":"lone star",
+    "denton guyer":"guyer",
+    "denton ryan":"ryan",
+    "arlington bowie":"bowie",
+    "arlington lamar":"lamar",
+    "mansfield summit":"summit",
+    "mansfield lake ridge":"lake ridge",
+    "prosper walnut grove":"walnut grove"
+  };
+  const canonSchool=aliases[school]||school;
+
+  const schoolTokens=new Set([...school.split(' '),...canonSchool.split(' ')]);
+  Object.entries(aliases).forEach(([alias,target])=>{
+    if(target===canonSchool) alias.split(' ').forEach(t=>schoolTokens.add(t));
+  });
+
+  const parts=name.split(/\s+/);
+  while(parts.length>1 && schoolTokens.has(nrm(parts[parts.length-1]))){
+    parts.pop();
+  }
+  return parts.join(' ');
+}
+
+function prospectIdentity(p){
+  return `${nrm(cleanProspectName(p))}|${nrm(p.school||'')}|${p.classYear||''}`;
+}
+
+
+function prospectNamesEquivalent(a,b){
+  const x=nrm(cleanProspectName(a));
+  const y=nrm(cleanProspectName(b));
+  if(!x || !y) return false;
+  if(x===y) return true;
+
+  const xt=x.split(' ');
+  const yt=y.split(' ');
+  const short=xt.length<=yt.length?xt:yt;
+  const long=xt.length<=yt.length?yt:xt;
+
+  // Same first/last identity with only trailing school/city tokens added.
+  if(short.length>=2 && long.length>=short.length){
+    let prefix=true;
+    for(let i=0;i<short.length;i++){
+      if(short[i]!==long[i]){prefix=false;break;}
+    }
+    if(prefix) return true;
+  }
+
+  return false;
+}
+
+function sameProspect(a,b){
+  if(String(a.classYear||'')!==String(b.classYear||'')) return false;
+  if(nrm(a.commitment||'')!==nrm(b.commitment||'')) return false;
+  return prospectNamesEquivalent(a,b);
+}
+
+function playersForGame(g){
+  const matched=recruits
+    .filter(p=>schoolMatch(p.school,g.away)||schoolMatch(p.school,g.home))
+    .map(p=>({...p,name:cleanProspectName(p)}))
+    .sort((a,b)=>(b.prospectScore||b.rating||0)-(a.prospectScore||a.rating||0));
+
+  const unique=[];
+
+  for(const p of matched){
+    const idx=unique.findIndex(existing=>sameProspect(existing,p));
+    if(idx>=0){
+      // Prefer the cleaner/shorter name while preserving the richer record.
+      if(String(p.name||'').length < String(unique[idx].name||'').length){
+        unique[idx]={...unique[idx],name:p.name};
+      }
+      continue;
+    }
+    unique.push(p);
+    if(unique.length>=6) break;
+  }
+  return unique;
+}
+function recruitScoreForGame(g){
+  const ps=playersForGame(g);
+  if(!ps.length) return g.recruitTalent;
+  let total=0;
+  ps.forEach(p=>{
+    let v=p.prospectScore||p.rating||75;
+    if((p.stars||0)>=5) v+=5;
+    else if((p.stars||0)>=4) v+=2;
+    if(p.commitment && p.commitment!=='Uncommitted' && p.commitment!=='Committed') v+=2;
+    total+=v;
+  });
+  const avg=total/ps.length;
+  const depth=Math.min(10,Math.max(0,ps.length-1)*2);
+  return Math.min(100,Math.round(avg+depth));
+}
+
+
+function rankingForTeam(teamName){
+  const target=nrm(teamName);
+  return teamRankings.find(r=>{
+    const rk=nrm(r.team);
+    return rk===target || schoolMatch(r.team,teamName);
+  }) || null;
+}
+function teamQualityFromRankings(g){
+  const a=rankingForTeam(g.away), b=rankingForTeam(g.home);
+  if(a && b) return Math.round((a.rating+b.rating)/2);
+  if(a) return Math.round((a.rating+g.teamQuality)/2);
+  if(b) return Math.round((b.rating+g.teamQuality)/2);
+  return g.teamQuality;
+}
+
+
+
+
+
+
+
+function localityScore(distance, radius){
+  // Strongly favor nearby games while still allowing exceptional games farther out.
+  // 0 mi = 100, 25 mi = 96, 50 mi = 90, 75 mi = 82,
+  // 100 mi = 72, 150 mi = 50, 200 mi = 28, 250 mi = 10.
+  const d=Math.max(0, Number(distance)||0);
+
+  let local;
+  if(d<=25) local=100-(d/25)*4;
+  else if(d<=50) local=96-((d-25)/25)*6;
+  else if(d<=75) local=90-((d-50)/25)*8;
+  else if(d<=100) local=82-((d-75)/25)*10;
+  else if(d<=150) local=72-((d-100)/50)*22;
+  else if(d<=200) local=50-((d-150)/50)*22;
+  else if(d<=250) local=28-((d-200)/50)*18;
+  else local=Math.max(0,10-(d-250)*0.1);
+
+  // If user chose a tight radius, distance should matter even more.
+  if(radius && radius<=100){
+    local=Math.max(0, local - Math.max(0,d-radius)*0.35);
+  }
+  return Math.round(Math.max(0,Math.min(100,local)));
+}
+
+function rankedGameScore(gameScore, distance, radius){
+  const local=localityScore(distance,radius);
+
+  // 80% quality + 20% locality at close range, but locality becomes a hard
+  // penalty for very distant games. This keeps elite distant games visible
+  // without allowing Dallas games to dominate Houston.
+  let combined = gameScore*0.80 + local*0.20;
+
+  if(distance>100) combined -= (distance-100)*0.08;
+  if(distance>150) combined -= (distance-150)*0.10;
+  if(distance>200) combined -= (distance-200)*0.12;
+
+  return Math.round(Math.max(0,Math.min(100,combined)));
+}
+
+
+
+
+
+function populateCollegeFilter(){
+  const el=$('collegeFilter');
+  if(!el) return;
+  const colleges=[...new Set(recruits
+    .map(p=>String(p.commitment||'').trim())
+    .filter(c=>c && c.toLowerCase()!=='uncommitted'))]
+    .sort((a,b)=>a.localeCompare(b));
+  el.innerHTML='<option value="">All colleges</option>'+
+    colleges.map(c=>`<option value="${c}">${c}</option>`).join('');
+}
+
+function gameHasCollegeCommit(g,college){
+  if(!college) return true;
+  const names=new Set([nrm(g.away),nrm(g.home)]);
+  return recruits.some(p=>
+    String(p.commitment||'')===college &&
+    names.has(nrm(p.school))
+  );
+}
+
+
+let teamSearchIndex=[];
+
+function buildTeamSearchIndex(){
+  const names=new Map();
+
+  Object.values(weeks||{}).forEach(wk=>{
+    (wk.games||[]).forEach(g=>{
+      [g.away,g.home].forEach(team=>{
+        const name=String(team||'').trim();
+        if(!name) return;
+        const key=nrm(name);
+        if(!names.has(key)) names.set(key,name);
+      });
+    });
+  });
+
+  teamSearchIndex=[...names.values()].sort((a,b)=>a.localeCompare(b));
+}
+
+function updateTeamSuggestions(){
+  const input=$('search');
+  const box=$('teamSuggestions');
+  if(!input||!box) return;
+
+  const q=nrm(input.value);
+  if(q.length<2){
+    box.hidden=true;
+    box.innerHTML='';
+    return;
+  }
+
+  const starts=[];
+  const contains=[];
+
+  for(const team of teamSearchIndex){
+    const t=nrm(team);
+    if(t.startsWith(q)) starts.push(team);
+    else if(t.includes(q)) contains.push(team);
+    if(starts.length+contains.length>=12) break;
+  }
+
+  const matches=[...starts,...contains].slice(0,8);
+
+  if(!matches.length){
+    box.hidden=true;
+    box.innerHTML='';
+    return;
+  }
+
+  box.innerHTML=matches.map(team=>
+    `<button type="button" class="team-suggestion" data-team="${team.replace(/"/g,'&quot;')}">${team}</button>`
+  ).join('');
+  box.hidden=false;
+}
+
+function chooseTeamSuggestion(team){
+  const input=$('search');
+  const box=$('teamSuggestions');
+  if(input) input.value=team;
+  if(box){
+    box.hidden=true;
+    box.innerHTML='';
+  }
+  input?.focus();
+}
+
+
+function gameMatchesTeamSearch(g, query){
+  const q=nrm(query||'');
+  if(!q) return true;
+
+  const away=nrm(g.away||'');
+  const home=nrm(g.home||'');
+
+  // Exact selected-school match first, with contains fallback for manual typing.
+  return away===q || home===q || away.includes(q) || home.includes(q);
+}
+
+function render(){
+  const collegeFilter=$('collegeFilter')?.value||'';
+  const wk=weeks[$('week').value];
+  const loc=locations[$('location').value];
+  const radius=+$('radius').value;
+  const q=$('search').value.trim();
+  const sort=$('sort').value;
+
+  let allGames=wk.games.map(g=>{
+    const d=loc ? distanceMiles(loc[0],loc[1],g.lat,g.lng) : null;
+    const actualRecruit=recruitScoreForGame(g);
+    const actualTeam=teamQualityFromRankings(g);
+    const awayRanking=rankingForTeam(g.away);
+    const homeRanking=rankingForTeam(g.home);
+    const adjusted={...g,recruitTalent:actualRecruit,teamQuality:actualTeam};
+    const baseScore=score(adjusted);
+    const local=localityScore(d,radius);
+    const sortScore=rankedGameScore(baseScore,d,radius);
+    return {...adjusted,score:baseScore,baseScore,sortScore,locality:local,distance:d,players:playersForGame(g),awayRanking,homeRanking};
+  });
+
+  let arr=allGames.filter(g=>
+    radius>=9999 || (g.distance!==null && g.distance<=radius)
+  );
+
+  arr.sort((a,b)=>
+    sort==='distance' ? (a.distance??99999)-(b.distance??99999) :
+    sort==='recruit' ? b.recruitTalent-a.recruitTalent :
+    sort==='team' ? b.teamQuality-a.teamQuality :
+    sort==='match' ? b.matchupQuality-a.matchupQuality :
+    (b.sortScore??b.score)-(a.sortScore??a.score)
+  );
+
+  const available=arr.length;
+  arr=arr.filter(g=>g.distance<=radius).filter(g=>gameMatchesTeamSearch(g,q)).filter(g=>gameHasCollegeCommit(g,collegeFilter)).slice(0,30);
+
+  $('weekMetric').textContent='Week '+$('week').value;
+  $('count').textContent=arr.length;
+  $('must').textContent=arr.filter(g=>g.score>=93).length;
+  $('topscore').textContent=arr.length?Math.max(...arr.map(g=>g.score)):'—';
+  $('title').textContent=wk.label;
+  $('subtitle').textContent=
+    `Showing ${arr.length} ranked game${arr.length===1?'':'s'} ${radius>=9999?'statewide':'within '+radius+' miles of '+$('location').value}. ` +
+    (available<30 && radius<9999 ? `Only ${available} indexed games are currently available inside this range; add more local games to the schedule index to reach 30.` : '');
+
+  $('list').innerHTML=arr.map((g,i)=>`
+    <article class="game">
+      <div class="top">
+        <div>
+          <div class="match">${i+1}. ${g.away} <span class="muted">at</span> ${g.home}</div>
+          <div class="muted">${g.date} • ${g.time} • ${g.venue}</div>
+          ${(g.awayRanking||g.homeRanking)?`<div class="muted" style="margin-top:5px;font-size:12px">
+            ${g.awayRanking?`${g.away}: ${g.awayRanking.record} • TX #${g.awayRanking.stateRank}${g.awayRanking.classRank?' • '+g.awayRanking.class+' #'+g.awayRanking.classRank:''} • Rating ${g.awayRanking.rating}`:''}
+            ${g.awayRanking&&g.homeRanking?' &nbsp; | &nbsp; ':''}
+            ${g.homeRanking?`${g.home}: ${g.homeRanking.record} • TX #${g.homeRanking.stateRank}${g.homeRanking.classRank?' • '+g.homeRanking.class+' #'+g.homeRanking.classRank:''} • Rating ${g.homeRanking.rating}`:''}
+          </div>`:''}
+          <div class="distance">📍 ${g.distance===null?'Distance unavailable':Math.round(g.distance)+' miles from '+$('location').value}</div>
+        </div>
+        <div>
+          <div class="score">${g.score}<span style="font-size:13px;color:var(--muted)">/100</span></div>
+          <span class="badge">${badge(g.score)}</span>
+        </div>
+      </div>
+      <div class="track"><div class="fill" style="width:${g.score}%"></div></div>
+      <div class="details">
+        <div><span>Team Quality</span><b>${g.teamQuality}</b></div>
+        <div><span>Recruit Talent</span><b>${g.recruitTalent}</b></div>
+        <div><span>Matchup</span><b>${g.matchupQuality}</b></div>
+        <div><span>Importance</span><b>${g.importance}</b></div>
+        <div><span>Local Relevance</span><b>${g.locality??'—'}</b></div>
+      </div>
+      ${g.players?.length?`<div class="players-watch">
+        <div class="players-watch-title">Players to Watch</div>
+        ${g.players.map(p=>`<div class="player-row">
+          <div class="player-main">
+            <div class="player-name"><span class="star">${'★'.repeat(Math.min(5,p.stars||0))}</span> ${p.name}</div>
+            <div class="player-meta">${p.school} • ${p.position} • Class of ${p.classYear}${p.stateRank?' • TX #'+p.stateRank:''}${p.nationalRank?' • #'+p.nationalRank+' national':''} • ${p.tier||'Prospect'}</div>
+          </div>
+          <div class="player-commit">${p.commitment||'Uncommitted'}</div>
+        </div>`).join('')}
+      </div>`:''}
+    </article>`).join('') || '<div class="game muted">No games match those filters.</div>';
+}
+
+
+function renderTeamRankings(){
+  const q=($('teamRankSearch')?.value||'').toLowerCase().trim();
+  const cls=$('teamClassFilter')?.value||'';
+  const limit=+($('teamRankLimit')?.value||50);
+  let arr=[...teamRankings].filter(r=>{
+    const matches=!q || (r.team||'').toLowerCase().includes(q);
+    const classOk=!cls || r.class===cls;
+    return matches && classOk;
+  }).sort((a,b)=>(a.stateRank||99999)-(b.stateRank||99999)).slice(0,limit);
+
+  $('teamRankBody').innerHTML=arr.map(r=>`<tr>
+    <td class="rank-num">#${r.stateRank||'—'}</td>
+    <td><b>${r.team}</b>${r.classRank?`<div class="muted" style="font-size:11px">${r.class} #${r.classRank}</div>`:''}</td>
+    <td>${r.class||'—'}</td>
+    <td>${r.record||'0-0'}</td>
+    <td><b>${r.rating??'—'}</b></td>
+    <td>${r.strengthOfSchedule??'—'}</td>
+    <td>${r.avgScoringMargin??'—'}</td>
+    <td>${r.recentForm??'—'}</td>
+  </tr>`).join('') || '<tr><td colspan="8" class="muted">No teams match.</td></tr>';
+}
+
+function renderPlayerRankings(){
+  const q=($('playerRankSearch')?.value||'').toLowerCase().trim();
+  const yr=$('playerClassFilter')?.value||'';
+  const limit=+($('playerRankLimit')?.value||50);
+  const cleanedPlayers=recruits
+    .map(p=>({...p,name:cleanProspectName(p)}))
+    .sort((a,b)=>(a.loneStarRank||9999)-(b.loneStarRank||9999));
+
+  const dedupedPlayers=[];
+  cleanedPlayers.forEach(p=>{
+    const idx=dedupedPlayers.findIndex(existing=>sameProspect(existing,p));
+    if(idx>=0){
+      if(String(p.name||'').length < String(dedupedPlayers[idx].name||'').length){
+        dedupedPlayers[idx]={...dedupedPlayers[idx],name:p.name};
+      }
+      return;
+    }
+    dedupedPlayers.push(p);
+  });
+  let arr=dedupedPlayers.filter(p=>{
+    const matches=!q || ((p.name||'')+' '+(p.school||'')).toLowerCase().includes(q);
+    const yearOk=!yr || String(p.classYear)===yr;
+    return matches && yearOk;
+  }).sort((a,b)=>(a.loneStarRank||9999)-(b.loneStarRank||9999) || (b.prospectScore||b.rating||0)-(a.prospectScore||a.rating||0)).slice(0,limit);
+
+  $('playerRankBody').innerHTML=arr.map((p,i)=>`<tr>
+    <td class="rank-num">#${p.loneStarRank||i+1}</td>
+    <td><b>${p.name}</b></td>
+    <td>${p.school}</td>
+    <td>${p.position||'—'}</td>
+    <td>${p.classYear||'—'}</td>
+    <td><b>${p.prospectScore||p.rating||'—'}</b></td>
+    <td>${p.stateRank?`#${p.stateRank}`:'—'}</td>
+    <td>${p.commitment||'Uncommitted'}</td>
+    <td><span class="prospect-badge">${p.tier||'Prospect'}</span></td>
+  </tr>`).join('') || '<tr><td colspan="9" class="muted">No players match.</td></tr>';
+}
+
+function activateFootballTab(id){
+  document.querySelectorAll('.football-tab').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));
+  document.querySelectorAll('.tab-pane').forEach(p=>p.classList.toggle('active',p.id===id));
+  if(id==='teamsPane') renderTeamRankings();
+  if(id==='playersPane') renderPlayerRankings();
+}
+
+document.querySelectorAll('.football-tab').forEach(btn=>{
+  btn.addEventListener('click',()=>activateFootballTab(btn.dataset.tab));
+});
+
+
+
+
+
+
+$('collegeFilter')?.addEventListener('change',render);
+
+
+$('teamSearchButton')?.addEventListener('click',()=>{
+  if($('teamSuggestions')) $('teamSuggestions').hidden=true;
+  render();
+});
+
+$('search')?.addEventListener('keydown',e=>{
+  if(e.key==='Enter'){
+    e.preventDefault();
+    if($('teamSuggestions')) $('teamSuggestions').hidden=true;
+    render();
+  }
+});
+
+
+$('search')?.addEventListener('input',updateTeamSuggestions);
+
+$('teamSuggestions')?.addEventListener('click',e=>{
+  const btn=e.target.closest('.team-suggestion');
+  if(!btn) return;
+  chooseTeamSuggestion(btn.dataset.team);
+});
+
+document.addEventListener('click',e=>{
+  const search=$('search');
+  const box=$('teamSuggestions');
+  if(!search||!box) return;
+  if(e.target!==search && !box.contains(e.target)){
+    box.hidden=true;
+  }
+});
+
+Promise.all([
+  fetch('season.json').then(r=>r.json()),
+  fetch('locations.json').then(r=>r.json()),
+  fetch('recruits.json').then(r=>r.json()),
+  fetch('team-rankings.json?ts='+Date.now()).then(r=>r.json())
+]).then(([seasonData,locationData,recruitData,rankingData])=>{
+  weeks=seasonData; locations=locationData; recruits=recruitData.players||[]; teamRankings=rankingData.teams||[];
+
+  for(const name of Object.keys(locations)){
+    $('location').insertAdjacentHTML('beforeend',`<option value="${name}">${name}</option>`);
+  }
+  $('location').value='Dallas';
+
+  for(const k of Object.keys(weeks)){
+    $('week').insertAdjacentHTML('beforeend',`<option value="${k}">${weeks[k].label}</option>`);
+  }
+  $('week').value=chooseWeek();
+  populateCollegeFilter();
+  buildTeamSearchIndex();
+  render();
+  renderTeamRankings();
+  renderPlayerRankings();
+});
+
+['location','radius','week','sort'].forEach(id=>$(id).addEventListener('change',render));
+
+['teamRankSearch','playerRankSearch'].forEach(id=>$(id)?.addEventListener('input',()=>id==='teamRankSearch'?renderTeamRankings():renderPlayerRankings()));
+['teamClassFilter','teamRankLimit'].forEach(id=>$(id)?.addEventListener('change',renderTeamRankings));
+['playerClassFilter','playerRankLimit'].forEach(id=>$(id)?.addEventListener('change',renderPlayerRankings));
+['wTeam','wRecruit','wMatch','wImportance'].forEach(id=>{
+  $(id).addEventListener('input',()=>{updateWeightLabels();render();});
+});
+$('resetWeights').addEventListener('click',()=>{
+  $('wTeam').value=40;
+  $('wRecruit').value=35;
+  $('wMatch').value=15;
+  $('wImportance').value=10;
+  updateWeightLabels();
+  render();
+});
+updateWeightLabels();
+$('quick').addEventListener('change',()=>{
+  if(!$('quick').value) return;
+  const [loc,rad]=$('quick').value.split('|');
+  $('location').value=loc;
+  $('radius').value=rad;
+  render();
+});
+</script>
+<script>
+console.info('Players to Watch includes ranked recruits, FBS/FCS commits, and selected underclassmen. Star icons are display tiers for the app, not a claim of an exact recruiting-service composite.');
+</script>
+
+<script>
+  window.va = window.va || function () {
+    (window.vaq = window.vaq || []).push(arguments);
+  };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+
+</body>
+</html>
