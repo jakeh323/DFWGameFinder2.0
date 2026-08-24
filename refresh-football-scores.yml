@@ -1,0 +1,44 @@
+name: Refresh Football Scores
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 7 * * 5"
+      timezone: "America/Chicago"
+    - cron: "30 7 * * 6"
+      timezone: "America/Chicago"
+    - cron: "30 7 * * 0"
+      timezone: "America/Chicago"
+
+permissions:
+  contents: write
+
+jobs:
+  scores:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install packages
+        run: pip install -r requirements.txt
+
+      - name: Refresh schedules and scores
+        run: python update_schedule.py
+
+      - name: Commit updated scores
+        run: |
+          git config user.name "Lone Star Game Finder Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add season.json
+          if git diff --cached --quiet; then
+            echo "No score changes."
+          else
+            git commit -m "Refresh football schedules and scores"
+            git push
+          fi
