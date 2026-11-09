@@ -447,8 +447,27 @@ def main():
     class_by_team={}
     raw=[]
 
-    # Fetch six statewide pages per week = only 60 pages total.
-    for wk in range(1,12):
+    # Reuse completed regular-season weeks during postseason rebuilds.
+    # Otherwise every daily refresh makes 60 unnecessary HTTP requests.
+    old_season={}
+    if OUT.exists():
+        try:
+            old_season=json.loads(OUT.read_text(encoding="utf-8"))
+        except (ValueError, OSError) as exc:
+            print(f"WARNING: cannot reuse previous season index: {exc}", flush=True)
+    completed_week_keys=[
+        str(wk) for wk in range(1,11)
+        if old_season.get(str(wk),{}).get("games")
+    ]
+    reuse_regular=(datetime.now().date() >= datetime(YEAR,11,8).date()
+                   and len(completed_week_keys)==10)
+    if reuse_regular:
+        for key in completed_week_keys:
+            season[key]["games"]=old_season[key]["games"]
+        print("Reusing saved Weeks 1–10; refreshing Week 11 and playoffs.", flush=True)
+
+    # On a fresh build, fetch all 11 weeks. On postseason refresh, only Week 11.
+    for wk in (range(11,12) if reuse_regular else range(1,12)):
         print(f"Week {wk}...")
         for cid,cls in CLASSES.items():
             try:
@@ -518,6 +537,8 @@ def main():
             "source":g["source"]
         })
 
+    # Populate team classifications from retained results where available.
+    # The rank/baseline logic still works if a team is not classified.
     add_playoff_games(season, schools, class_by_team)
 
     # Keep previously indexed playoff rounds if a source is temporarily unavailable.
