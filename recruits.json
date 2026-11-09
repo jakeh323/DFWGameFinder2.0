@@ -1,9 +1,11 @@
 {
-  "updatedAt": "2026-11-06T20:29:33.316042+00:00",
+  "updatedAt": "2026-11-09T20:00:00+00:00",
   "methodology": {
     "name": "Lone Star Prospect Ranking",
     "note": "Internal ranking based on prospect tier, verified in-state commitment status, and curated watchlist/ranking inputs. It is not a copied recruiting-service composite.",
-    "schoolMatching": "Exact school IDs / approved aliases only; no generic substring matching."
+    "schoolMatching": "Exact school IDs / approved aliases only; no generic substring matching.",
+    "lastManualVerification": "2026-11-09",
+    "lastManualVerificationNote": "Verified 19 2027 prospect state ranks and commitments against Dave Campbell's Texas Football school commitment lists; internal Lone Star prospect scores and ordering remain independent."
   },
   "playerCount": 157,
   "players": [
@@ -36,7 +38,9 @@
       "source": "https://www.texasfootball.com/team/texas-longhorns/commitments/2027",
       "schoolId": "randle",
       "loneStarRank": 2,
-      "sourceType": "public commitment page"
+      "sourceType": "public commitment page",
+      "stateRankSource": "Dave Campbell's Texas Football",
+      "stateRankVerifiedAt": "2026-11-09"
     },
     {
       "name": "SaRod Baker",
@@ -61,13 +65,15 @@
       "classYear": 2027,
       "prospectScore": 98,
       "stars": 5,
-      "stateRank": 3,
+      "stateRank": 2,
       "nationalRank": null,
       "commitment": "Texas A&M",
       "tier": "Ranked recruit",
-      "source": "Dave Campbell's Texas Football commitment pages",
+      "source": "https://www.texasfootball.com/team/texas-a-m-aggies/commitments/2027",
       "schoolId": "humble kingwood",
-      "loneStarRank": 4
+      "loneStarRank": 4,
+      "stateRankSource": "Dave Campbell's Texas Football",
+      "stateRankVerifiedAt": "2026-11-09"
     },
     {
       "name": "Ismael Camara",
@@ -76,13 +82,15 @@
       "classYear": 2027,
       "prospectScore": 98,
       "stars": 5,
-      "stateRank": 5,
+      "stateRank": 4,
       "nationalRank": null,
       "commitment": "Texas",
       "tier": "Ranked recruit",
-      "source": "Dave Campbell's Texas Football commitment pages",
+      "source": "https://www.texasfootball.com/team/texas-longhorns/commitments/2027",
       "schoolId": "gilmer",
-      "loneStarRank": 5
+      "loneStarRank": 5,
+      "stateRankSource": "Dave Campbell's Texas Football",
+      "stateRankVerifiedAt": "2026-11-09"
     },
     {
       "name": "Kavian Bryant",
@@ -145,7 +153,9 @@
       "source": "https://www.texasfootball.com/team/texas-longhorns/commitments/2027",
       "schoolId": "summit",
       "loneStarRank": 9,
-      "sourceType": "public commitment page"
+      "sourceType": "public commitment page",
+      "stateRankSource": "Dave Campbell's Texas Football",
+      "stateRankVerifiedAt": "2026-11-09"
     },
     {
       "name": "Montre Jackson",
@@ -160,7 +170,9 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/texas-longhorns/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 10
+      "loneStarRank": 10,
+      "stateRankSource": "Dave Campbell's Texas Football",
+      "stateRankVerifiedAt": "2026-11-09"
     },
     {
       "name": "Amari Vickerson",
@@ -184,13 +196,15 @@
       "classYear": 2027,
       "prospectScore": 94,
       "stars": 4,
-      "stateRank": 9,
+      "stateRank": 8,
       "nationalRank": null,
       "commitment": "Texas A&M",
       "tier": "Ranked recruit",
-      "source": "Dave Campbell's Texas Football commitment pages",
+      "source": "https://www.texasfootball.com/team/texas-a-m-aggies/commitments/2027",
       "schoolId": "waxahachie",
-      "loneStarRank": 12
+      "loneStarRank": 12,
+      "stateRankSource": "Dave Campbell's Texas Football",
+      "stateRankVerifiedAt": "2026-11-09"
     },
     {
       "name": "Kaeden Scott",
@@ -199,13 +213,15 @@
       "classYear": 2027,
       "prospectScore": 94,
       "stars": 4,
-      "stateRank": 11,
+      "stateRank": 10,
       "nationalRank": null,
       "commitment": "Texas A&M",
       "tier": "Ranked recruit",
-      "source": "Dave Campbell's Texas Football commitment pages",
+      "source": "https://www.texasfootball.com/team/texas-a-m-aggies/commitments/2027",
       "schoolId": "san antonio roosevelt",
-      "loneStarRank": 13
+      "loneStarRank": 13,
+      "stateRankSource": "Dave Campbell's Texas Football",
+      "stateRankVerifiedAt": "2026-11-09"
     },
     {
       "name": "Brian Swanson",
@@ -214,13 +230,15 @@
       "classYear": 2027,
       "prospectScore": 94,
       "stars": 4,
-      "stateRank": 15,
+      "stateRank": 14,
       "nationalRank": null,
       "commitment": "Texas",
       "tier": "Ranked recruit",
-      "source": "Dave Campbell's Texas Football commitment pages",
+      "source": "https://www.texasfootball.com/team/texas-longhorns/commitments/2027",
       "schoolId": "south oak cliff",
-      "loneStarRank": 14
+      "loneStarRank": 14,
+      "stateRankSource": "Dave Campbell's Texas Football",
+      "stateRankVerifiedAt": "2026-11-09"
     },
     {
       "name": "Kaden McCarty",
@@ -229,13 +247,15 @@
       "classYear": 2027,
       "prospectScore": 94,
       "stars": 4,
-      "stateRank": 16,
+      "stateRank": 15,
       "nationalRank": null,
       "commitment": "Texas A&M",
       "tier": "Ranked recruit",
-      "source": "Dave Campbell's Texas Football commitment pages",
+      "source": "https://www.texasfootball.com/team/texas-a-m-aggies/commitments/2027",
       "schoolId": "cypress falls",
-      "loneStarRank": 15
+      "loneStarRank": 15,
+      "stateRankSource": "Dave Campbell's Texas Football",
+      "stateRankVerifiedAt": "2026-11-09"
     },
     {
       "name": "Jhadyn Nelson",
@@ -296,7 +316,9 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/texas-longhorns/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 19
+      "loneStarRank": 19,
+      "stateRankSource": "Dave Campbell's Texas Football",
+      "stateRankVerifiedAt": "2026-11-09"
     },
     {
       "name": "Karece Hoyt",
@@ -359,7 +381,9 @@
       "source": "https://www.texasfootball.com/team/texas-longhorns/commitments/2027",
       "schoolId": "columbus",
       "loneStarRank": 23,
-      "sourceType": "public commitment page"
+      "sourceType": "public commitment page",
+      "stateRankSource": "Dave Campbell's Texas Football",
+      "stateRankVerifiedAt": "2026-11-09"
     },
     {
       "name": "Joshua Banks",
@@ -384,13 +408,15 @@
       "classYear": 2027,
       "prospectScore": 91,
       "stars": 4,
-      "stateRank": 28,
+      "stateRank": 27,
       "nationalRank": null,
       "commitment": "Texas",
       "tier": "Ranked recruit",
-      "source": "Dave Campbell's Texas Football commitment pages",
+      "source": "https://www.texasfootball.com/team/texas-longhorns/commitments/2027",
       "schoolId": "alvin shadow creek",
-      "loneStarRank": 25
+      "loneStarRank": 25,
+      "stateRankSource": "Dave Campbell's Texas Football",
+      "stateRankVerifiedAt": "2026-11-09"
     },
     {
       "name": "DeMarrion Johnson",
@@ -399,13 +425,15 @@
       "classYear": 2027,
       "prospectScore": 91,
       "stars": 4,
-      "stateRank": 37,
+      "stateRank": 36,
       "nationalRank": null,
       "commitment": "Texas A&M",
       "tier": "Ranked recruit",
-      "source": "Dave Campbell's Texas Football commitment pages",
+      "source": "https://www.texasfootball.com/team/texas-a-m-aggies/commitments/2027",
       "schoolId": "tyler legacy",
-      "loneStarRank": 26
+      "loneStarRank": 26,
+      "stateRankSource": "Dave Campbell's Texas Football",
+      "stateRankVerifiedAt": "2026-11-09"
     },
     {
       "name": "Qua Ford",
@@ -451,7 +479,9 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/texas-longhorns/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 29
+      "loneStarRank": 29,
+      "stateRankSource": "Dave Campbell's Texas Football",
+      "stateRankVerifiedAt": "2026-11-09"
     },
     {
       "name": "Jason Johnson",
@@ -467,7 +497,9 @@
       "source": "https://www.texasfootball.com/team/texas-longhorns/commitments/2027",
       "schoolId": "atascocita",
       "loneStarRank": 30,
-      "sourceType": "public commitment page"
+      "sourceType": "public commitment page",
+      "stateRankSource": "Dave Campbell's Texas Football",
+      "stateRankVerifiedAt": "2026-11-09"
     },
     {
       "name": "Kameron Roberson",
@@ -674,13 +706,15 @@
       "classYear": 2027,
       "prospectScore": 87,
       "stars": 3,
-      "stateRank": 52,
+      "stateRank": 51,
       "nationalRank": null,
       "commitment": "Texas A&M",
       "tier": "Ranked recruit",
-      "source": "Dave Campbell's Texas Football commitment pages",
+      "source": "https://www.texasfootball.com/team/texas-a-m-aggies/commitments/2027",
       "schoolId": "burleson centennial",
-      "loneStarRank": 44
+      "loneStarRank": 44,
+      "stateRankSource": "Dave Campbell's Texas Football",
+      "stateRankVerifiedAt": "2026-11-09"
     },
     {
       "name": "Isaiah Udom",
@@ -704,13 +738,15 @@
       "classYear": 2027,
       "prospectScore": 87,
       "stars": 3,
-      "stateRank": 68,
+      "stateRank": 67,
       "nationalRank": null,
       "commitment": "Texas A&M",
       "tier": "Ranked recruit",
-      "source": "Dave Campbell's Texas Football commitment pages",
+      "source": "https://www.texasfootball.com/team/texas-a-m-aggies/commitments/2027",
       "schoolId": "brandeis",
-      "loneStarRank": 46
+      "loneStarRank": 46,
+      "stateRankSource": "Dave Campbell's Texas Football",
+      "stateRankVerifiedAt": "2026-11-09"
     },
     {
       "name": "Drake Carroll",
@@ -755,7 +791,9 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/texas-longhorns/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 49
+      "loneStarRank": 49,
+      "stateRankSource": "Dave Campbell's Texas Football",
+      "stateRankVerifiedAt": "2026-11-09"
     },
     {
       "name": "Darrien Neal",
@@ -815,7 +853,9 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/texas-longhorns/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 53
+      "loneStarRank": 53,
+      "stateRankSource": "Dave Campbell's Texas Football",
+      "stateRankVerifiedAt": "2026-11-09"
     },
     {
       "name": "Cael Thigpen",
