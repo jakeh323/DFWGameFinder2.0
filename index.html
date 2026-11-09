@@ -89,7 +89,7 @@ input,select{width:100%;margin-top:6px;padding:10px;border:1px solid var(--borde
 .rank-table th{font-size:12px;color:var(--muted);background:#0c1627;position:sticky;top:0}
 .rank-table tr:last-child td{border-bottom:0}
 .rank-num{font-weight:800;color:var(--accent)}
-.rank-controls{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px;margin-bottom:12px}
+.rank-controls{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:12px;margin-bottom:12px}
 .prospect-badge{display:inline-block;border:1px solid var(--border);background:var(--chip);border-radius:999px;padding:4px 8px;font-size:11px}
 @media(max-width:700px){.rank-controls{grid-template-columns:1fr}}
 
@@ -304,9 +304,10 @@ input,select{width:100%;margin-top:6px;padding:10px;border:1px solid var(--borde
   <div class="rank-controls">
     <label>Search team<input id="teamRankSearch" placeholder="North Crowley, Westlake..."></label>
     <label>Classification<select id="teamClassFilter"><option value="">All classes</option><option>6A</option><option>5A</option><option>4A</option><option>3A</option><option>2A</option><option>1A</option></select></label>
+    <label>Ranking<select id="teamRankOrder"><option value="loneStar">Lone Star overall</option><option value="dctf">DCTF/AP class ranks</option></select></label>
     <label>Show<select id="teamRankLimit"><option value="25">Top 25</option><option value="50" selected>Top 50</option><option value="100">Top 100</option></select></label>
   </div>
-  <div class="rank-table-wrap"><table class="rank-table"><thead><tr><th>Rank</th><th>Team</th><th>Class</th><th>Record</th><th>Lone Star Rating</th><th>SOS</th><th>Margin</th><th>Recent</th></tr></thead><tbody id="teamRankBody"></tbody></table></div>
+  <div class="rank-table-wrap"><table class="rank-table"><thead><tr><th>Lone Star Overall</th><th>Team</th><th>Class</th><th>Record</th><th>DCTF/AP Class Rank</th><th>Lone Star Rating</th><th>SOS</th><th>Margin</th><th>Recent</th></tr></thead><tbody id="teamRankBody"></tbody></table></div>
 </div>
 </div>
 
@@ -898,22 +899,26 @@ function renderTeamRankings(){
   const q=($('teamRankSearch')?.value||'').toLowerCase().trim();
   const cls=$('teamClassFilter')?.value||'';
   const limit=+($('teamRankLimit')?.value||50);
+  const order=$('teamRankOrder')?.value||'loneStar';
   let arr=[...teamRankings].filter(r=>{
     const matches=!q || (r.team||'').toLowerCase().includes(q);
     const classOk=!cls || r.class===cls;
-    return matches && classOk;
-  }).sort((a,b)=>(a.stateRank||99999)-(b.stateRank||99999)).slice(0,limit);
+    return matches && classOk && (order!=='dctf' || Number.isInteger(r.publishedRank));
+  }).sort((a,b)=>order==='dctf'
+    ? (a.publishedDivision||'').localeCompare(b.publishedDivision||'') || (a.publishedRank||99999)-(b.publishedRank||99999)
+    : (a.stateRank||99999)-(b.stateRank||99999)).slice(0,limit);
 
   $('teamRankBody').innerHTML=arr.map(r=>`<tr>
     <td class="rank-num">#${r.stateRank||'—'}</td>
     <td><b>${r.team}</b>${r.classRank?`<div class="muted" style="font-size:11px">${r.class} #${r.classRank}</div>`:''}</td>
     <td>${r.class||'—'}</td>
     <td>${r.record||'0-0'}</td>
+    <td>${r.publishedRank?`${r.publishedDivision} #${r.publishedRank}`:'—'}</td>
     <td><b>${r.rating??'—'}</b></td>
     <td>${r.strengthOfSchedule??'—'}</td>
     <td>${r.avgScoringMargin??'—'}</td>
     <td>${r.recentForm??'—'}</td>
-  </tr>`).join('') || '<tr><td colspan="8" class="muted">No teams match.</td></tr>';
+  </tr>`).join('') || '<tr><td colspan="9" class="muted">No teams match.</td></tr>';
 }
 
 function renderPlayerRankings(){
@@ -1049,7 +1054,7 @@ $('location').addEventListener('change',()=>{
 }));
 
 ['teamRankSearch','playerRankSearch'].forEach(id=>$(id)?.addEventListener('input',()=>id==='teamRankSearch'?renderTeamRankings():renderPlayerRankings()));
-['teamClassFilter','teamRankLimit'].forEach(id=>$(id)?.addEventListener('change',renderTeamRankings));
+['teamClassFilter','teamRankLimit','teamRankOrder'].forEach(id=>$(id)?.addEventListener('change',renderTeamRankings));
 ['playerClassFilter','playerRankLimit'].forEach(id=>$(id)?.addEventListener('change',renderPlayerRankings));
 ['wTeam','wRecruit','wMatch','wImportance'].forEach(id=>{
   $(id).addEventListener('input',()=>{updateWeightLabels();render();});
