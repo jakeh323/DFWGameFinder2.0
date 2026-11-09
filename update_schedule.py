@@ -37,6 +37,13 @@ WEEKS = {
     "8": {"label":"Week 8 • Oct. 15–17, 2026","start":"2026-10-15","end":"2026-10-17"},
     "9": {"label":"Week 9 • Oct. 22–24, 2026","start":"2026-10-22","end":"2026-10-24"},
     "10":{"label":"Week 10 • Oct. 29–31, 2026","start":"2026-10-29","end":"2026-10-31"},
+    "11":{"label":"Week 11 • Nov. 5–7, 2026","start":"2026-11-05","end":"2026-11-07"},
+    "12":{"label":"Bi-District • Nov. 12–14, 2026","start":"2026-11-12","end":"2026-11-14"},
+    "13":{"label":"Area • Nov. 19–21, 2026","start":"2026-11-19","end":"2026-11-21"},
+    "14":{"label":"Regional Round • Nov. 26–28, 2026","start":"2026-11-26","end":"2026-11-28"},
+    "15":{"label":"Regional / State Quarterfinals • Dec. 3–5, 2026","start":"2026-12-03","end":"2026-12-05"},
+    "16":{"label":"State Semifinals • Dec. 9–12, 2026","start":"2026-12-09","end":"2026-12-12"},
+    "17":{"label":"State Championships • Dec. 16–19, 2026","start":"2026-12-16","end":"2026-12-19"},
 }
 
 # Texas public-school points from NCES EDGE.
@@ -330,6 +337,106 @@ def game_score(g):
         g["matchupQuality"]*.15+g["importance"]*.10
     )
 
+
+# Playoff schedules are posted round-by-round, not before the season.
+# txhsfb.net publishes public weekly matchups, kickoff times, and neutral-site stadiums.
+PLAYOFF_BASE = "https://txhsfb.net/"
+PLAYOFF_WEEK_12 = "https://txhsfb.net/?p=29290"
+
+def playoff_page(week):
+    if week == 12:
+        return PLAYOFF_WEEK_12
+    # Search for that round's published article. Never fabricate future matchups.
+    url = f"https://txhsfb.net/?s=2026+Playoffs+Week+{week}+Schedule"
+    resp = get(url)
+    if resp is None:
+        return None
+    soup = BeautifulSoup(resp.text, "html.parser")
+    expected = re.compile(rf"2026\\s+Playoffs.*Week\\s+{week}\\s+Schedule", re.I)
+    for a in soup.select("a[href]"):
+        if expected.search(a.get_text(" ", strip=True)):
+            href = a.get("href", "")
+            if href.startswith(PLAYOFF_BASE):
+                return href
+    return None
+
+def parse_playoff_week(week):
+    url = playoff_page(week)
+    if not url:
+        print(f"Playoff week {week}: article not yet published.")
+        return []
+    resp = get(url)
+    if resp is None:
+        return []
+    soup = BeautifulSoup(resp.text, "html.parser")
+    # The article lists games as: Team vs. Team, Fri, 11/13, 7:00 PM, Stadium, City
+    # Restrict to lines that start with a game matchup; discard page navigation.
+    games = []
+    seen = set()
+    for line in soup.get_text("\\n").splitlines():
+        line = re.sub(r"\\s+", " ", line).strip()
+        m = re.match(
+            r"^(.+?)\\s+vs\\.\\s+(.+?),\\s*(Mon|Tue|Wed|Thu|Fri|Sat|Sun|TBD),"
+            r"\\s*(\\d{1,2}/\\d{1,2}|TBD),\\s*(\\d{1,2}:\\d{2}\\s*[AP]M|TBD),"
+            r"\\s*(.+),\\s*([^,]+)$", line, re.I,
+        )
+        if not m:
+            continue
+        away, home, day_name, date_str, kickoff, stadium, city = [v.strip() for v in m.groups()]
+        if date_str == "TBD":
+            continue
+        try:
+            dt = datetime.strptime(f"{date_str}/{YEAR}", "%m/%d/%Y")
+        except ValueError:
+            continue
+        period = WEEKS[str(week)]
+        if not (period["start"] <= dt.strftime("%Y-%m-%d") <= period["end"]):
+            continue
+        key = (norm(away), norm(home), dt.strftime("%Y-%m-%d"))
+        if key in seen:
+            continue
+        seen.add(key)
+        games.append({
+            "away": away, "home": home, "date_obj": dt,
+            "time": kickoff.upper(), "stadium": stadium, "city": city,
+            "source": url,
+        })
+    print(f"Playoff week {week}: {len(games)} games from {url}")
+    return games
+
+def add_playoff_games(season, schools, class_by_team):
+    by_city = {}
+    for school in schools:
+        key = norm(school.get("city"))
+        if key and school.get("lat") is not None and school.get("lng") is not None:
+            by_city.setdefault(key, []).append(school)
+    for wk in range(12, 18):
+        for g in parse_playoff_week(wk):
+            # Neutral-site location: approximate stadium city, NEVER use home-team campus.
+            city_points = by_city.get(norm(g["city"]), [])
+            if not city_points:
+                continue
+            lat = sum(float(p["lat"]) for p in city_points) / len(city_points)
+            lng = sum(float(p["lng"]) for p in city_points) / len(city_points)
+            cls_a = class_by_team.get(norm(g["away"]), "4A")
+            cls_b = class_by_team.get(norm(g["home"]), "4A")
+            tq, rt, mq, imp = components(g["away"], g["home"], cls_a, cls_b)
+            # Postseason games receive a modest significance uplift.
+            imp = min(100, imp + 12 + (wk - 12) * 3)
+            dt = g["date_obj"]
+            season[str(wk)]["games"].append({
+                "away": g["away"], "home": g["home"],
+                "date": dt.strftime("%A, %b. %d").replace(" 0", " "),
+                "dateISO": dt.strftime("%Y-%m-%d"), "time": g["time"],
+                "status": "Scheduled", "awayScore": None, "homeScore": None,
+                "winner": None, "venue": f'{g["stadium"]}, {g["city"]}, TX',
+                "lat": lat, "lng": lng, "locationApproximate": True,
+                "playoffRound": WEEKS[str(wk)]["label"].split(" • ")[0],
+                "teamQuality": tq, "recruitTalent": rt,
+                "matchupQuality": mq, "importance": imp,
+                "source": g["source"],
+            })
+
 def main():
     print("Loading Texas public-school locations from NCES...")
     schools=load_nces()
@@ -341,7 +448,7 @@ def main():
     raw=[]
 
     # Fetch six statewide pages per week = only 60 pages total.
-    for wk in range(1,11):
+    for wk in range(1,12):
         print(f"Week {wk}...")
         for cid,cls in CLASSES.items():
             try:
@@ -410,6 +517,19 @@ def main():
             "matchupQuality":mq,"importance":imp,
             "source":g["source"]
         })
+
+    add_playoff_games(season, schools, class_by_team)
+
+    # Keep previously indexed playoff rounds if a source is temporarily unavailable.
+    if OUT.exists():
+        try:
+            old = json.loads(OUT.read_text(encoding="utf-8"))
+            for wk in range(12, 18):
+                key = str(wk)
+                if not season[key]["games"]:
+                    season[key]["games"] = old.get(key, {}).get("games", [])
+        except (ValueError, OSError) as exc:
+            print(f"WARNING: existing playoff fallback unavailable: {exc}")
 
     for wk in season.values():
         wk["games"].sort(key=game_score,reverse=True)
