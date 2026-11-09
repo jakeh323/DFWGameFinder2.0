@@ -26,7 +26,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Build statewide schedule index
-        run: python update_schedule.py
+        run: python -u update_schedule.py
 
       - name: Commit new season.json
         run: |
