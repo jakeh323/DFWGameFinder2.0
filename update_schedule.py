@@ -352,7 +352,7 @@ def playoff_page(week):
     if resp is None:
         return None
     soup = BeautifulSoup(resp.text, "html.parser")
-    expected = re.compile(rf"2026\\s+Playoffs.*Week\\s+{week}\\s+Schedule", re.I)
+    expected = re.compile(rf"2026\s+Playoffs.*Week\s+{week}\s+Schedule", re.I)
     for a in soup.select("a[href]"):
         if expected.search(a.get_text(" ", strip=True)):
             href = a.get("href", "")
@@ -373,12 +373,12 @@ def parse_playoff_week(week):
     # Restrict to lines that start with a game matchup; discard page navigation.
     games = []
     seen = set()
-    for line in soup.get_text("\\n").splitlines():
-        line = re.sub(r"\\s+", " ", line).strip()
+    for line in soup.get_text("\n").splitlines():
+        line = re.sub(r"\s+", " ", line).strip()
         m = re.match(
-            r"^(.+?)\\s+vs\\.\\s+(.+?),\\s*(Mon|Tue|Wed|Thu|Fri|Sat|Sun|TBD),"
-            r"\\s*(\\d{1,2}/\\d{1,2}|TBD),\\s*(\\d{1,2}:\\d{2}\\s*[AP]M|TBD),"
-            r"\\s*(.+),\\s*([^,]+)$", line, re.I,
+            r"^(.+?)\s+vs\.\s+(.+?),\s*(Mon|Tue|Wed|Thu|Fri|Sat|Sun|TBD),"
+            r"\s*(\d{1,2}/\d{1,2}|TBD),\s*(\d{1,2}:\d{2}\s*[AP]M|TBD),"
+            r"\s*(.+),\s*([^,]+)$", line, re.I,
         )
         if not m:
             continue
