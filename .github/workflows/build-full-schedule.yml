@@ -2,6 +2,8 @@ name: Build Full Texas Schedule
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 13 * 11,12 *' # Daily during postseason; times are UTC
 
 permissions:
   contents: write

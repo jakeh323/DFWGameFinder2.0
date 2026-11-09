@@ -836,14 +836,15 @@ function render(){
   const available=arr.length;
   arr=arr.filter(g=>g.distance<=radius).filter(g=>gameMatchesTeamSearch(g,q)).filter(g=>gameHasCollegeCommit(g,collegeFilter)).slice(0,30);
 
-  $('weekMetric').textContent='Week '+$('week').value;
+  $('weekMetric').textContent=wk.label.split(' • ')[0];
   $('count').textContent=arr.length;
   $('must').textContent=arr.filter(g=>g.score>=93).length;
   $('topscore').textContent=arr.length?Math.max(...arr.map(g=>g.score)):'—';
   $('title').textContent=wk.label;
   $('subtitle').textContent=
     `Showing ${arr.length} ranked game${arr.length===1?'':'s'} ${radius>=9999?'statewide':'within '+radius+' miles of '+activeLocationLabel}. ` +
-    (available<30 && radius<9999 ? `Only ${available} indexed games are currently available inside this range; add more local games to the schedule index to reach 30.` : '');
+    (wk.games.length===0 && +$('week').value>=12 ? 'Playoff matchups and locations will appear as that round is announced and the schedule refreshes.' :
+      available<30 && radius<9999 ? `Only ${available} indexed games are currently available inside this range.` : '');
 
   $('list').innerHTML=arr.map((g,i)=>`
     <article class="game">
@@ -864,7 +865,7 @@ function render(){
             ${g.awayRanking&&g.homeRanking?' &nbsp; | &nbsp; ':''}
             ${g.homeRanking?`${g.home}: ${g.homeRanking.record} • TX #${g.homeRanking.stateRank}${g.homeRanking.classRank?' • '+g.homeRanking.class+' #'+g.homeRanking.classRank:''} • Rating ${g.homeRanking.rating}`:''}
           </div>`:''}
-          <div class="distance">📍 ${g.distance===null?'Distance unavailable':Math.round(g.distance)+' miles from '+activeLocationLabel}</div>
+          <div class="distance">📍 ${g.distance===null?'Distance unavailable':Math.round(g.distance)+' miles from '+activeLocationLabel}${g.locationApproximate?' (approx. stadium-city location)':''}</div>
         </div>
         <div>
           <div class="score">${g.score}<span style="font-size:13px;color:var(--muted)">/100</span></div>
@@ -889,7 +890,7 @@ function render(){
           <div class="player-commit">${p.commitment||'Uncommitted'}</div>
         </div>`).join('')}
       </div>`:''}
-    </article>`).join('') || '<div class="game muted">No games match those filters.</div>';
+    </article>`).join('') || `<div class="game muted">${wk.games.length===0 && +$('week').value>=12 ? 'Playoff games have not been published for this round yet. Check back as matchups and venues are confirmed.' : 'No games match those filters.'}</div>`;
 }
 
 
