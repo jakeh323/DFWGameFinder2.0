@@ -1,11 +1,9 @@
 {
-  "updatedAt": "2026-11-09T20:00:00+00:00",
+  "updatedAt": "2026-11-10T20:57:27.660232+00:00",
   "methodology": {
     "name": "Lone Star Prospect Ranking",
     "note": "Internal ranking based on prospect tier, verified in-state commitment status, and curated watchlist/ranking inputs. It is not a copied recruiting-service composite.",
-    "schoolMatching": "Exact school IDs / approved aliases only; no generic substring matching.",
-    "lastManualVerification": "2026-11-09",
-    "lastManualVerificationNote": "Verified 19 2027 prospect state ranks and commitments against Dave Campbell's Texas Football school commitment lists; internal Lone Star prospect scores and ordering remain independent."
+    "schoolMatching": "Exact school IDs / approved aliases only; no generic substring matching."
   },
   "playerCount": 157,
   "players": [
