@@ -433,7 +433,10 @@ def add_playoff_games(season, schools, class_by_team):
         if key and school.get("lat") is not None and school.get("lng") is not None:
             by_city.setdefault(key, []).append(school)
     for wk in range(12, 18):
-        for g in parse_playoff_week(wk):
+        round_games = parse_playoff_week(wk)
+        if wk in PUBLISHED_PLAYOFF_PAGES and not round_games:
+            raise RuntimeError(f"Published playoff Week {wk} has zero parsed games; refusing to overwrite the saved schedule.")
+        for g in round_games:
             # Neutral-site location: approximate stadium city, NEVER use home-team campus.
             city_points = by_city.get(norm(g["city"]), [])
             if not city_points:
