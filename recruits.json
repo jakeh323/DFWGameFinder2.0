@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-17T22:34:17.140436+00:00",
+  "updatedAt": "2026-11-18T15:00:00Z",
   "methodology": {
     "name": "Lone Star Prospect Ranking",
-    "note": "Internal ranking based on prospect tier, verified in-state commitment status, and curated watchlist/ranking inputs. It is not a copied recruiting-service composite.",
+    "note": "Internal ranking based on prospect tier, verified in-state commitment status, and curated watchlist/ranking inputs. It is not a copied recruiting-service composite. Rivals Texas ranks are explicitly separate from Lone Star's score and from the legacy stateRank (DCTF) field. Newly added athletes are not independently scored and commitments have not been inferred.",
     "schoolMatching": "Exact school IDs / approved aliases only; no generic substring matching."
   },
-  "playerCount": 157,
+  "playerCount": 177,
   "players": [
     {
       "name": "Jalen Brewster",
@@ -38,7 +38,10 @@
       "loneStarRank": 2,
       "sourceType": "public commitment page",
       "stateRankSource": "Dave Campbell's Texas Football",
-      "stateRankVerifiedAt": "2026-11-09"
+      "stateRankVerifiedAt": "2026-11-09",
+      "rivalsTexasRank": 5,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
     },
     {
       "name": "SaRod Baker",
@@ -54,7 +57,10 @@
       "source": "https://www.texasfootball.com/team/texas-tech-red-raiders/commitments/2027",
       "schoolId": "desoto",
       "loneStarRank": 3,
-      "sourceType": "public commitment page"
+      "sourceType": "public commitment page",
+      "rivalsTexasRank": 8,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
     },
     {
       "name": "Kennedy Brown",
@@ -71,7 +77,10 @@
       "schoolId": "humble kingwood",
       "loneStarRank": 4,
       "stateRankSource": "Dave Campbell's Texas Football",
-      "stateRankVerifiedAt": "2026-11-09"
+      "stateRankVerifiedAt": "2026-11-09",
+      "rivalsTexasRank": 6,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
     },
     {
       "name": "Ismael Camara",
@@ -88,7 +97,10 @@
       "schoolId": "gilmer",
       "loneStarRank": 5,
       "stateRankSource": "Dave Campbell's Texas Football",
-      "stateRankVerifiedAt": "2026-11-09"
+      "stateRankVerifiedAt": "2026-11-09",
+      "rivalsTexasRank": 1,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
     },
     {
       "name": "Kavian Bryant",
@@ -103,7 +115,10 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/texas-tech-red-raiders/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 6
+      "loneStarRank": 6,
+      "rivalsTexasRank": 11,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
     },
     {
       "name": "Julian Caldwell",
@@ -119,7 +134,10 @@
       "source": "https://www.texasfootball.com/team/texas-tech-red-raiders/commitments/2027",
       "schoolId": "argyle",
       "loneStarRank": 7,
-      "sourceType": "public commitment page"
+      "sourceType": "public commitment page",
+      "rivalsTexasRank": 16,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
     },
     {
       "name": "Benny Easter Jr.",
@@ -135,7 +153,10 @@
       "source": "https://www.texasfootball.com/team/texas-tech-red-raiders/commitments/2027",
       "schoolId": "summer creek",
       "loneStarRank": 8,
-      "sourceType": "public commitment page"
+      "sourceType": "public commitment page",
+      "rivalsTexasRank": 7,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
     },
     {
       "name": "Cameron Hall",
@@ -153,7 +174,10 @@
       "loneStarRank": 9,
       "sourceType": "public commitment page",
       "stateRankSource": "Dave Campbell's Texas Football",
-      "stateRankVerifiedAt": "2026-11-09"
+      "stateRankVerifiedAt": "2026-11-09",
+      "rivalsTexasRank": 14,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
     },
     {
       "name": "Montre Jackson",
@@ -170,7 +194,10 @@
       "sourceType": "public commitment page",
       "loneStarRank": 10,
       "stateRankSource": "Dave Campbell's Texas Football",
-      "stateRankVerifiedAt": "2026-11-09"
+      "stateRankVerifiedAt": "2026-11-09",
+      "rivalsTexasRank": 42,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
     },
     {
       "name": "Amari Vickerson",
@@ -202,7 +229,10 @@
       "schoolId": "waxahachie",
       "loneStarRank": 12,
       "stateRankSource": "Dave Campbell's Texas Football",
-      "stateRankVerifiedAt": "2026-11-09"
+      "stateRankVerifiedAt": "2026-11-09",
+      "rivalsTexasRank": 2,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
     },
     {
       "name": "Kaeden Scott",
@@ -236,7 +266,10 @@
       "schoolId": "south oak cliff",
       "loneStarRank": 14,
       "stateRankSource": "Dave Campbell's Texas Football",
-      "stateRankVerifiedAt": "2026-11-09"
+      "stateRankVerifiedAt": "2026-11-09",
+      "rivalsTexasRank": 30,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
     },
     {
       "name": "Kaden McCarty",
@@ -253,7 +286,10 @@
       "schoolId": "cypress falls",
       "loneStarRank": 15,
       "stateRankSource": "Dave Campbell's Texas Football",
-      "stateRankVerifiedAt": "2026-11-09"
+      "stateRankVerifiedAt": "2026-11-09",
+      "rivalsTexasRank": 40,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
     },
     {
       "name": "Jhadyn Nelson",
@@ -268,7 +304,10 @@
       "tier": "Ranked recruit",
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "langham creek",
-      "loneStarRank": 16
+      "loneStarRank": 16,
+      "rivalsTexasRank": 4,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
     },
     {
       "name": "Braylon Williams",
@@ -299,7 +338,10 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/houston-cougars/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 18
+      "loneStarRank": 18,
+      "rivalsTexasRank": 12,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
     },
     {
       "name": "Briceson Thrower",
@@ -397,7 +439,10 @@
       "source": "https://www.texasfootball.com/team/texas-tech-red-raiders/commitments/2027",
       "schoolId": "atascocita",
       "loneStarRank": 24,
-      "sourceType": "public commitment page"
+      "sourceType": "public commitment page",
+      "rivalsTexasRank": 17,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
     },
     {
       "name": "Brandon Sherrard",
@@ -414,7 +459,10 @@
       "schoolId": "alvin shadow creek",
       "loneStarRank": 25,
       "stateRankSource": "Dave Campbell's Texas Football",
-      "stateRankVerifiedAt": "2026-11-09"
+      "stateRankVerifiedAt": "2026-11-09",
+      "rivalsTexasRank": 24,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
     },
     {
       "name": "DeMarrion Johnson",
@@ -462,7 +510,10 @@
       "source": "https://www.texasfootball.com/team/texas-tech-red-raiders/commitments/2027",
       "schoolId": "desoto",
       "loneStarRank": 28,
-      "sourceType": "public commitment page"
+      "sourceType": "public commitment page",
+      "rivalsTexasRank": 20,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
     },
     {
       "name": "Ty Knutson",
@@ -512,7 +563,10 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/houston-cougars/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 31
+      "loneStarRank": 31,
+      "rivalsTexasRank": 31,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
     },
     {
       "name": "Trey Haralson",
@@ -528,7 +582,10 @@
       "source": "https://www.texasfootball.com/team/smu-mustangs/commitments/2027",
       "schoolId": "tyler",
       "loneStarRank": 32,
-      "sourceType": "public commitment page"
+      "sourceType": "public commitment page",
+      "rivalsTexasRank": 32,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
     },
     {
       "name": "Luke Babin",
@@ -543,7 +600,10 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/baylor-bears/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 33
+      "loneStarRank": 33,
+      "rivalsTexasRank": 39,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
     },
     {
       "name": "Davontrae Kirkland",
@@ -573,7 +633,10 @@
       "tier": "Ranked recruit",
       "source": "https://www.texasfootball.com/team/texas-tech-red-raiders/commitments/2027",
       "sourceType": "public commitment page",
-      "loneStarRank": 35
+      "loneStarRank": 35,
+      "rivalsTexasRank": 13,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
     },
     {
       "name": "Brice McCurdy",
@@ -712,7 +775,10 @@
       "schoolId": "burleson centennial",
       "loneStarRank": 44,
       "stateRankSource": "Dave Campbell's Texas Football",
-      "stateRankVerifiedAt": "2026-11-09"
+      "stateRankVerifiedAt": "2026-11-09",
+      "rivalsTexasRank": 36,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
     },
     {
       "name": "Isaiah Udom",
@@ -853,7 +919,10 @@
       "sourceType": "public commitment page",
       "loneStarRank": 53,
       "stateRankSource": "Dave Campbell's Texas Football",
-      "stateRankVerifiedAt": "2026-11-09"
+      "stateRankVerifiedAt": "2026-11-09",
+      "rivalsTexasRank": 26,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
     },
     {
       "name": "Cael Thigpen",
@@ -1420,7 +1489,10 @@
       "source": "https://www.texasfootball.com/team/utsa-roadrunners/commitments/2027",
       "schoolId": "robinson",
       "loneStarRank": 90,
-      "sourceType": "public commitment page"
+      "sourceType": "public commitment page",
+      "rivalsTexasRank": 28,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
     },
     {
       "name": "Elliott Brown",
@@ -2443,6 +2515,375 @@
       "source": "Dave Campbell's Texas Football commitment pages",
       "schoolId": "sachse",
       "loneStarRank": 157
+    },
+    {
+      "name": "Cooper Witten",
+      "school": "Argyle Liberty Christian",
+      "schoolId": "argyle liberty christian",
+      "position": "LB",
+      "classYear": 2027,
+      "commitment": "Not verified",
+      "prospectScore": null,
+      "stars": null,
+      "loneStarRank": null,
+      "stateRank": null,
+      "tier": "Rivals ranked · pending Lone Star evaluation",
+      "source": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx",
+      "sourceType": "Rivals 2027 Texas rankings",
+      "rivalsTexasRank": 3,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
+    },
+    {
+      "name": "Keldrid Ben",
+      "school": "Montgomery",
+      "schoolId": "montgomery",
+      "position": "RB",
+      "classYear": 2027,
+      "commitment": "Not verified",
+      "prospectScore": null,
+      "stars": null,
+      "loneStarRank": null,
+      "stateRank": null,
+      "tier": "Rivals ranked · pending Lone Star evaluation",
+      "source": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx",
+      "sourceType": "Rivals 2027 Texas rankings",
+      "rivalsTexasRank": 9,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
+    },
+    {
+      "name": "Xavier Muhammad",
+      "school": "Alvin Shadow Creek",
+      "schoolId": "alvin shadow creek",
+      "position": "DL",
+      "classYear": 2027,
+      "commitment": "Not verified",
+      "prospectScore": null,
+      "stars": null,
+      "loneStarRank": null,
+      "stateRank": null,
+      "tier": "Rivals ranked · pending Lone Star evaluation",
+      "source": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx",
+      "sourceType": "Rivals 2027 Texas rankings",
+      "rivalsTexasRank": 10,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
+    },
+    {
+      "name": "Jerry Outhouse",
+      "school": "North Crowley",
+      "schoolId": "north crowley",
+      "position": "CB",
+      "classYear": 2027,
+      "commitment": "Not verified",
+      "prospectScore": null,
+      "stars": null,
+      "loneStarRank": null,
+      "stateRank": null,
+      "tier": "Rivals ranked · pending Lone Star evaluation",
+      "source": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx",
+      "sourceType": "Rivals 2027 Texas rankings",
+      "rivalsTexasRank": 15,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
+    },
+    {
+      "name": "Zyron Forstall",
+      "school": "Sheldon C.E. King",
+      "schoolId": "sheldon c.e. king",
+      "position": "EDGE",
+      "classYear": 2027,
+      "commitment": "Not verified",
+      "prospectScore": null,
+      "stars": null,
+      "loneStarRank": null,
+      "stateRank": null,
+      "tier": "Rivals ranked · pending Lone Star evaluation",
+      "source": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx",
+      "sourceType": "Rivals 2027 Texas rankings",
+      "rivalsTexasRank": 18,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
+    },
+    {
+      "name": "Ezekiel Ayangbile",
+      "school": "Houston Langham Creek",
+      "schoolId": "houston langham creek",
+      "position": "DL",
+      "classYear": 2027,
+      "commitment": "Not verified",
+      "prospectScore": null,
+      "stars": null,
+      "loneStarRank": null,
+      "stateRank": null,
+      "tier": "Rivals ranked · pending Lone Star evaluation",
+      "source": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx",
+      "sourceType": "Rivals 2027 Texas rankings",
+      "rivalsTexasRank": 19,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
+    },
+    {
+      "name": "Lathan Whisenton",
+      "school": "Waco Midway",
+      "schoolId": "waco midway",
+      "position": "RB",
+      "classYear": 2027,
+      "commitment": "Not verified",
+      "prospectScore": null,
+      "stars": null,
+      "loneStarRank": null,
+      "stateRank": null,
+      "tier": "Rivals ranked · pending Lone Star evaluation",
+      "source": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx",
+      "sourceType": "Rivals 2027 Texas rankings",
+      "rivalsTexasRank": 21,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
+    },
+    {
+      "name": "CaDarius McMiller",
+      "school": "Tyler",
+      "schoolId": "tyler",
+      "position": "RB",
+      "classYear": 2027,
+      "commitment": "Not verified",
+      "prospectScore": null,
+      "stars": null,
+      "loneStarRank": null,
+      "stateRank": null,
+      "tier": "Rivals ranked · pending Lone Star evaluation",
+      "source": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx",
+      "sourceType": "Rivals 2027 Texas rankings",
+      "rivalsTexasRank": 22,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
+    },
+    {
+      "name": "Joshua Vilmael",
+      "school": "Fort Bend Travis",
+      "schoolId": "fort bend travis",
+      "position": "CB",
+      "classYear": 2027,
+      "commitment": "Not verified",
+      "prospectScore": null,
+      "stars": null,
+      "loneStarRank": null,
+      "stateRank": null,
+      "tier": "Rivals ranked · pending Lone Star evaluation",
+      "source": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx",
+      "sourceType": "Rivals 2027 Texas rankings",
+      "rivalsTexasRank": 23,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
+    },
+    {
+      "name": "Peyton Miller",
+      "school": "Anna",
+      "schoolId": "anna",
+      "position": "IOL",
+      "classYear": 2027,
+      "commitment": "Not verified",
+      "prospectScore": null,
+      "stars": null,
+      "loneStarRank": null,
+      "stateRank": null,
+      "tier": "Rivals ranked · pending Lone Star evaluation",
+      "source": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx",
+      "sourceType": "Rivals 2027 Texas rankings",
+      "rivalsTexasRank": 25,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
+    },
+    {
+      "name": "Alvin Mosley",
+      "school": "Almeta Crawford",
+      "schoolId": "almeta crawford",
+      "position": "WR",
+      "classYear": 2027,
+      "commitment": "Not verified",
+      "prospectScore": null,
+      "stars": null,
+      "loneStarRank": null,
+      "stateRank": null,
+      "tier": "Rivals ranked · pending Lone Star evaluation",
+      "source": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx",
+      "sourceType": "Rivals 2027 Texas rankings",
+      "rivalsTexasRank": 27,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
+    },
+    {
+      "name": "Tre Moore",
+      "school": "Pflugerville Weiss",
+      "schoolId": "pflugerville weiss",
+      "position": "WR",
+      "classYear": 2027,
+      "commitment": "Not verified",
+      "prospectScore": null,
+      "stars": null,
+      "loneStarRank": null,
+      "stateRank": null,
+      "tier": "Rivals ranked · pending Lone Star evaluation",
+      "source": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx",
+      "sourceType": "Rivals 2027 Texas rankings",
+      "rivalsTexasRank": 29,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
+    },
+    {
+      "name": "Brayden Booth",
+      "school": "South San Antonio",
+      "schoolId": "south san antonio",
+      "position": "EDGE",
+      "classYear": 2027,
+      "commitment": "Not verified",
+      "prospectScore": null,
+      "stars": null,
+      "loneStarRank": null,
+      "stateRank": null,
+      "tier": "Rivals ranked · pending Lone Star evaluation",
+      "source": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx",
+      "sourceType": "Rivals 2027 Texas rankings",
+      "rivalsTexasRank": 33,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
+    },
+    {
+      "name": "Zane Rowe",
+      "school": "Denton Guyer",
+      "schoolId": "denton guyer",
+      "position": "DL",
+      "classYear": 2027,
+      "commitment": "Not verified",
+      "prospectScore": null,
+      "stars": null,
+      "loneStarRank": null,
+      "stateRank": null,
+      "tier": "Rivals ranked · pending Lone Star evaluation",
+      "source": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx",
+      "sourceType": "Rivals 2027 Texas rankings",
+      "rivalsTexasRank": 34,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
+    },
+    {
+      "name": "Eli Johnson",
+      "school": "Cibolo Steele",
+      "schoolId": "cibolo steele",
+      "position": "S",
+      "classYear": 2027,
+      "commitment": "Not verified",
+      "prospectScore": null,
+      "stars": null,
+      "loneStarRank": null,
+      "stateRank": null,
+      "tier": "Rivals ranked · pending Lone Star evaluation",
+      "source": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx",
+      "sourceType": "Rivals 2027 Texas rankings",
+      "rivalsTexasRank": 35,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
+    },
+    {
+      "name": "JP Jones-Priest",
+      "school": "Arlington Martin",
+      "schoolId": "arlington martin",
+      "position": "RB",
+      "classYear": 2027,
+      "commitment": "Not verified",
+      "prospectScore": null,
+      "stars": null,
+      "loneStarRank": null,
+      "stateRank": null,
+      "tier": "Rivals ranked · pending Lone Star evaluation",
+      "source": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx",
+      "sourceType": "Rivals 2027 Texas rankings",
+      "rivalsTexasRank": 37,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
+    },
+    {
+      "name": "Jayshon Gibson",
+      "school": "Richland",
+      "schoolId": "richland",
+      "position": "RB",
+      "classYear": 2027,
+      "commitment": "Not verified",
+      "prospectScore": null,
+      "stars": null,
+      "loneStarRank": null,
+      "stateRank": null,
+      "tier": "Rivals ranked · pending Lone Star evaluation",
+      "source": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx",
+      "sourceType": "Rivals 2027 Texas rankings",
+      "rivalsTexasRank": 38,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
+    },
+    {
+      "name": "Mikhail McCreary",
+      "school": "San Antonio Johnson",
+      "schoolId": "san antonio johnson",
+      "position": "CB",
+      "classYear": 2027,
+      "commitment": "Not verified",
+      "prospectScore": null,
+      "stars": null,
+      "loneStarRank": null,
+      "stateRank": null,
+      "tier": "Rivals ranked · pending Lone Star evaluation",
+      "source": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx",
+      "sourceType": "Rivals 2027 Texas rankings",
+      "rivalsTexasRank": 41,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
+    },
+    {
+      "name": "Logan Davis",
+      "school": "Fort Bend Ridge Point",
+      "schoolId": "fort bend ridge point",
+      "position": "CB",
+      "classYear": 2027,
+      "commitment": "Not verified",
+      "prospectScore": null,
+      "stars": null,
+      "loneStarRank": null,
+      "stateRank": null,
+      "tier": "Rivals ranked · pending Lone Star evaluation",
+      "source": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx",
+      "sourceType": "Rivals 2027 Texas rankings",
+      "rivalsTexasRank": 43,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
+    },
+    {
+      "name": "Greedy James",
+      "school": "Manvel",
+      "schoolId": "manvel",
+      "position": "CB",
+      "classYear": 2027,
+      "commitment": "Not verified",
+      "prospectScore": null,
+      "stars": null,
+      "loneStarRank": null,
+      "stateRank": null,
+      "tier": "Rivals ranked · pending Lone Star evaluation",
+      "source": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx",
+      "sourceType": "Rivals 2027 Texas rankings",
+      "rivalsTexasRank": 44,
+      "rivalsRankAsOf": "2026-11-10",
+      "rivalsRankSource": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx"
     }
-  ]
+  ],
+  "externalRankings": {
+    "rivals2027Texas": {
+      "asOf": "2026-11-10",
+      "checkedOn": "2026-11-18",
+      "url": "https://www.on3.com/rivals/rankings/player/football/2027/?state=tx",
+      "verifiedTopCount": 44,
+      "description": "Rivals 2027 Texas rankings, separate from independent Lone Star ranking and DCTF state rank."
+    }
+  }
 }
