@@ -521,7 +521,7 @@ function sameProspect(a,b){
 
 function playersForGame(g){
   const matched=recruits
-    .filter(p=>schoolMatch(p.school,g.away)||schoolMatch(p.school,g.home))
+    .filter(p=>p.eligibleForTexasRanking!==false && (schoolMatch(p.school,g.away)||schoolMatch(p.school,g.home)))
     .map(p=>({...p,name:cleanProspectName(p)}))
     .sort((a,b)=>(b.prospectScore||b.rating||0)-(a.prospectScore||a.rating||0));
 
@@ -930,6 +930,7 @@ function renderPlayerRankings(){
   const limit=+($('playerRankLimit')?.value||50);
   const order=$('playerRankOrder')?.value||'loneStar';
   const cleanedPlayers=recruits
+    .filter(p=>p.eligibleForTexasRanking!==false)
     .map(p=>({...p,name:cleanProspectName(p)}))
     .sort((a,b)=>(a.loneStarRank||9999)-(b.loneStarRank||9999));
 
