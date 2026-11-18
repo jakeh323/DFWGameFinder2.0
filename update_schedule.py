@@ -341,58 +341,76 @@ def game_score(g):
 # Playoff schedules are posted round-by-round, not before the season.
 # txhsfb.net publishes public weekly matchups, kickoff times, and neutral-site stadiums.
 PLAYOFF_BASE = "https://txhsfb.net/"
-PLAYOFF_WEEK_12 = "https://txhsfb.net/?p=29290"
+# Actual published statewide schedules. The same site changes its visible
+# article headings as the postseason progresses, so prefer stable article URLs.
+PUBLISHED_PLAYOFF_PAGES = {
+    12: "https://txhsfb.net/?p=29290",
+    13: "https://txhsfb.net/?p=29577",
+}
 
 def playoff_page(week):
-    if week == 12:
-        return PLAYOFF_WEEK_12
-    # Search for that round's published article. Never fabricate future matchups.
+    if week in PUBLISHED_PLAYOFF_PAGES:
+        return PUBLISHED_PLAYOFF_PAGES[week]
+    # Future rounds are discovered from the site's search results. Accept both
+    # "Week 14 Schedule" and "Week 14 Scores & Schedules" naming conventions.
     url = f"https://txhsfb.net/?s=2026+Playoffs+Week+{week}+Schedule"
     resp = get(url)
     if resp is None:
         return None
     soup = BeautifulSoup(resp.text, "html.parser")
-    expected = re.compile(rf"2026\s+Playoffs.*Week\s+{week}\s+Schedule", re.I)
+    expected = re.compile(
+        rf"(?:2026\s+Playoffs.*)?Week\s+{week}\b.*(?:Schedule|Scores)",
+        re.I,
+    )
     for a in soup.select("a[href]"):
-        if expected.search(a.get_text(" ", strip=True)):
-            href = a.get("href", "")
-            if href.startswith(PLAYOFF_BASE):
-                return href
+        href = a.get("href", "")
+        label = a.get_text(" ", strip=True)
+        if expected.search(label) and href.startswith(PLAYOFF_BASE):
+            return href
     return None
 
 def parse_playoff_week(week):
     url = playoff_page(week)
     if not url:
-        print(f"Playoff week {week}: article not yet published.")
+        print(f"Playoff week {week}: source schedule not yet found.", flush=True)
         return []
     resp = get(url)
     if resp is None:
         return []
     soup = BeautifulSoup(resp.text, "html.parser")
-    # The article lists games as: Team vs. Team, Fri, 11/13, 7:00 PM, Stadium, City
-    # Restrict to lines that start with a game matchup; discard page navigation.
     games = []
     seen = set()
+    # Schedule rows may use either "11/20" or "Nov. 20" date notation.
+    # Score result lines do not contain "vs." and are intentionally excluded.
+    line_pattern = re.compile(
+        r"^(.+?)\s+vs\.\s+(.+?),\s*(Mon|Tue|Wed|Thu|Fri|Sat|Sun),"
+        r"\s*((?:\d{1,2}/\d{1,2})|(?:[A-Za-z]{3,9}\.?\s+\d{1,2})),"
+        r"\s*(\d{1,2}:\d{2}\s*[AP]M),\s*(.+),\s*([^,]+)$",
+        re.I,
+    )
     for line in soup.get_text("\n").splitlines():
         line = re.sub(r"\s+", " ", line).strip()
-        m = re.match(
-            r"^(.+?)\s+vs\.\s+(.+?),\s*(Mon|Tue|Wed|Thu|Fri|Sat|Sun|TBD),"
-            r"\s*(\d{1,2}/\d{1,2}|TBD),\s*(\d{1,2}:\d{2}\s*[AP]M|TBD),"
-            r"\s*(.+),\s*([^,]+)$", line, re.I,
-        )
+        m = line_pattern.match(line)
         if not m:
             continue
-        away, home, day_name, date_str, kickoff, stadium, city = [v.strip() for v in m.groups()]
-        if date_str == "TBD":
-            continue
-        try:
-            dt = datetime.strptime(f"{date_str}/{YEAR}", "%m/%d/%Y")
-        except ValueError:
+        away, home, day_name, date_str, kickoff, stadium, city = [
+            v.strip() for v in m.groups()
+        ]
+        dt = None
+        clean_date = date_str.replace(".", "")
+        for fmt in ("%m/%d/%Y", "%b %d %Y", "%B %d %Y"):
+            try:
+                dt = datetime.strptime(f"{clean_date} {YEAR}" if fmt != "%m/%d/%Y"
+                                       else f"{clean_date}/{YEAR}", fmt)
+                break
+            except ValueError:
+                pass
+        if dt is None:
             continue
         period = WEEKS[str(week)]
         if not (period["start"] <= dt.strftime("%Y-%m-%d") <= period["end"]):
             continue
-        key = (norm(away), norm(home), dt.strftime("%Y-%m-%d"))
+        key = (tuple(sorted([norm(away), norm(home)])), dt.strftime("%Y-%m-%d"))
         if key in seen:
             continue
         seen.add(key)
@@ -401,7 +419,11 @@ def parse_playoff_week(week):
             "time": kickoff.upper(), "stadium": stadium, "city": city,
             "source": url,
         })
-    print(f"Playoff week {week}: {len(games)} games from {url}")
+    print(f"Playoff week {week}: parsed {len(games)} games from {url}", flush=True)
+    # A real, published page with zero parseable games should not silently pass
+    # if the page contains game-matchup lines: show a diagnostic.
+    if not games and re.search(r"\bvs\.\s+.+?,\s*(?:Thu|Fri|Sat),", soup.get_text(" "), re.I):
+        print(f"WARNING: week {week} source has matchups, but none matched the parser.", flush=True)
     return games
 
 def add_playoff_games(season, schools, class_by_team):
