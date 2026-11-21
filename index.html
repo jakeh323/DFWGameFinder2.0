@@ -136,6 +136,18 @@ input,select{width:100%;margin-top:6px;padding:10px;border:1px solid var(--borde
 .final-score{margin-top:5px;font-size:15px;font-weight:800}
 .final-label{display:inline-block;margin-right:8px;padding:3px 7px;border-radius:999px;border:1px solid var(--border);font-size:10px;letter-spacing:.05em;text-transform:uppercase}
 .winner-team{font-weight:900}
+
+/* Live Texas football scoreboard. The actual ScoreStream feed stays provider-hosted. */
+.live-scores-panel{padding:20px}
+.live-scores-header{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;flex-wrap:wrap}
+.live-scores-header h2{margin:0 0 8px;font-size:24px}
+.live-scores-header p{margin:0;line-height:1.5}
+.live-scores-link{display:inline-flex;justify-content:center;align-items:center;gap:7px;padding:11px 14px;border-radius:10px;background:var(--accent);color:white;text-decoration:none;font-size:14px;font-weight:700;white-space:nowrap}
+.live-scores-link:hover,.live-scores-link:focus-visible{filter:brightness(1.13)}
+.live-scores-embed{margin-top:18px;border:1px solid var(--border);border-radius:12px;background:#fff;overflow:hidden;min-height:680px}
+.live-scores-iframe{display:block;width:100%;height:680px;border:0}
+.live-scores-footnote{font-size:12px;line-height:1.5;margin-top:12px}
+@media(max-width:650px){.live-scores-panel{padding:14px}.live-scores-header h2{font-size:21px}.live-scores-link{width:100%}.live-scores-iframe,.live-scores-embed{min-height:620px;height:620px}}
 </style>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://lonestargamefindertx.com/#website","url":"https://lonestargamefindertx.com/","name":"Lone Star Game Finder","description":"Find the best Texas high school football games near you. Compare top matchups, team rankings, recruit talent, players to watch, college commits, and game importance with Lone Star Game Finder.","inLanguage":"en-US"},{"@type":"WebApplication","@id":"https://lonestargamefindertx.com/#app","name":"Lone Star Game Finder","url":"https://lonestargamefindertx.com/","applicationCategory":"SportsApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"description":"A Texas high school football discovery tool that ranks nearby games using team quality, recruit talent, matchup quality, and game importance.","featureList":["Find Texas high school football games by location and radius","Rank nearby matchups by game score","View Lone Star team rankings","View recruit and prospect rankings","Filter games by college commitment","See players to watch"]}]}</script>
@@ -163,6 +175,7 @@ input,select{width:100%;margin-top:6px;padding:10px;border:1px solid var(--borde
 
 <div class="football-tabs" role="tablist" aria-label="Football views">
   <button type="button" class="football-tab active" data-tab="gamesPane">Top Games</button>
+  <button type="button" class="football-tab" data-tab="scoresPane">Live Scores</button>
   <button type="button" class="football-tab" data-tab="teamsPane">Team Rankings</button>
   <button type="button" class="football-tab" data-tab="playersPane">Player Rankings</button>
 </div>
@@ -297,6 +310,30 @@ input,select{width:100%;margin-top:6px;padding:10px;border:1px solid var(--borde
 <div class="muted" id="subtitle"></div>
 <div id="list"></div>
 
+</div>
+
+
+<div id="scoresPane" class="tab-pane" role="tabpanel" aria-label="Live Texas football scores">
+  <div class="panel live-scores-panel">
+    <div class="live-scores-header">
+      <div>
+        <h2>Live Texas High School Football Scores</h2>
+        <p class="muted">Scores and finals from ScoreStream’s existing Texas high school football coverage. No sign-in or score submissions required to view.</p>
+      </div>
+      <a class="live-scores-link" href="https://scorestream.com/explore/r/texas/high-school/football/scores" target="_blank" rel="noopener noreferrer">Open Full Scoreboard ↗</a>
+    </div>
+    <!-- For a first-party ScoreStream embed, create a free vertical scoreboard
+         at https://scorestream.com/widgetCreators/scoreboards/vert using
+         State: Texas, Sport: Football, Squad: High School Varsity.
+         Replace the iframe src below with:
+         https://scorestream.com/widgets/scoreboards/vert?userWidgetId=YOUR_WIDGET_ID
+         The direct Texas scores link remains available if third-party framing
+         is restricted by the provider. -->
+    <div class="live-scores-embed">
+      <iframe class="live-scores-iframe" title="ScoreStream Texas high school football scores" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://scorestream.com/explore/r/texas/high-school/football/scores"></iframe>
+    </div>
+    <p class="muted live-scores-footnote">Scores are provided by ScoreStream and depend on its reporting network. If the scoreboard does not display inside this page, use <a href="https://scorestream.com/explore/r/texas/high-school/football/scores" target="_blank" rel="noopener noreferrer">Open Full Scoreboard</a> above. Scores are separate from Lone Star Game Finder’s matchup rankings and playoff schedules.</p>
+  </div>
 </div>
 
 <div id="teamsPane" class="tab-pane">
