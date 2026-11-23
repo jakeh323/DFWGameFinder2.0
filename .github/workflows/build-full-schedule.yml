@@ -2,16 +2,27 @@ name: Build Full Texas Schedule
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - 'update_schedule.py'
+      - '.github/workflows/build-full-schedule.yml'
   schedule:
-    - cron: '0 13 * 11,12 *' # Daily during postseason; times are UTC
+    # Twice daily during the playoffs: 7:20 AM and 4:20 PM Central.
+    # This catches brackets and neutral-site announcements after weekend games.
+    - cron: '20 7,16 * 11,12 *'
+      timezone: 'America/Chicago'
 
 permissions:
   contents: write
 
+concurrency:
+  group: playoff-schedule-refresh
+  cancel-in-progress: false
+
 jobs:
   build:
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
 
     steps:
       - name: Check out repository
@@ -37,5 +48,6 @@ jobs:
             echo "No schedule changes."
           else
             git commit -m "Build full Texas weekly schedule index"
-            git push
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi
