@@ -454,7 +454,7 @@ def parse_playoff_week(week):
     # The publisher adds the four-digit year in the new Week 14 article.
     # Score result lines do not contain "vs." and are intentionally excluded.
     line_pattern = re.compile(
-        r"^(.+?)\s+vs\.\s+(.+?),\s*(Mon|Tue|Wed|Thu|Fri|Sat|Sun),"
+        r"^(.+?)\s+vs\.\s+(.+?),\s*(Mon(?:day)?|Tue(?:sday)?|Wed(?:nesday)?|Thu(?:rsday)?|Fri(?:day)?|Sat(?:urday)?|Sun(?:day)?),"
         r"\s*((?:\d{1,2}/\d{1,2})|(?:[A-Za-z]{3,9}\.?\s+\d{1,2}))(?:,\s*\d{4})?,"
         r"\s*(\d{1,2}:\d{2}\s*[AP]M),\s*(.+),\s*([^,]+)$",
         re.I,
