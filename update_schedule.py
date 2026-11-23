@@ -540,10 +540,22 @@ def main():
 
     season={k:{**v,"games":[]} for k,v in WEEKS.items()}
     class_by_team={}
+    # Team-rankings.json already contains statewide UIL classifications.
+    # Do not re-download regular-season pages just to recover team classes.
+    try:
+        ratings = json.loads(Path("team-rankings.json").read_text(encoding="utf-8"))
+        for team in ratings.get("teams", []):
+            cls = team.get("class")
+            if cls in BASELINE:
+                class_by_team[norm(team.get("team"))] = cls
+        print(f"Loaded classifications for {len(class_by_team)} teams.", flush=True)
+    except (OSError, ValueError, TypeError) as exc:
+        print(f"WARNING: existing team classifications unavailable: {exc}", flush=True)
     raw=[]
 
-    # Reuse completed regular-season weeks during postseason rebuilds.
-    # Otherwise every daily refresh makes 60 unnecessary HTTP requests.
+    # Reuse completed regular-season weeks including Week 11. All are over
+    # once the playoffs begin, and rebuilding them risks losing their venues
+    # when NCES is offline.
     old_season={}
     if OUT.exists():
         try:
@@ -551,18 +563,19 @@ def main():
         except (ValueError, OSError) as exc:
             print(f"WARNING: cannot reuse previous season index: {exc}", flush=True)
     completed_week_keys=[
-        str(wk) for wk in range(1,11)
+        str(wk) for wk in range(1,12)
         if old_season.get(str(wk),{}).get("games")
     ]
-    reuse_regular=(datetime.now().date() >= datetime(YEAR,11,8).date()
-                   and len(completed_week_keys)==10)
+    reuse_regular=(datetime.now().date() >= datetime(YEAR,11,15).date()
+                   and len(completed_week_keys)==11)
     if reuse_regular:
         for key in completed_week_keys:
             season[key]["games"]=old_season[key]["games"]
-        print("Reusing saved Weeks 1–10; refreshing Week 11 and playoffs.", flush=True)
+        print("Reusing saved Weeks 1–11; refreshing only playoff rounds.", flush=True)
 
-    # On a fresh build, fetch all 11 weeks. On postseason refresh, only Week 11.
-    for wk in (range(11,12) if reuse_regular else range(1,12)):
+    # On a fresh build fetch the season; once playoff season starts,
+    # request only the published playoff pages.
+    for wk in ([] if reuse_regular else range(1,12)):
         print(f"Week {wk}...")
         for cid,cls in CLASSES.items():
             try:
