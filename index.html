@@ -424,17 +424,14 @@ function todayCentral(){
 }
 
 function chooseWeek(){
+  // After a round ends, default to the NEXT round (not the nearest past one).
+  // Playoff fixtures are generally published a few days before kickoff.
   const t=todayCentral();
-  for(const [k,w] of Object.entries(weeks)){
-    const s=new Date(w.start+'T00:00:00'), e=new Date(w.end+'T23:59:59');
-    if(t>=s && t<=e) return k;
+  const rounds=Object.entries(weeks).sort((a,b)=>Number(a[0])-Number(b[0]));
+  for(const [k,w] of rounds){
+    if(t<=new Date(w.end+'T23:59:59')) return k;
   }
-  let best='1',dist=Infinity;
-  for(const [k,w] of Object.entries(weeks)){
-    const d=Math.abs(t-new Date(w.start+'T00:00:00'));
-    if(d<dist){dist=d;best=k}
-  }
-  return best;
+  return rounds.length ? rounds[rounds.length-1][0] : '1';
 }
 
 
@@ -1062,7 +1059,7 @@ $('zipInput')?.addEventListener('keydown',e=>{
 });
 
 Promise.all([
-  fetch('season.json').then(r=>r.json()),
+  fetch('season.json?ts='+Date.now(), {cache:'no-store'}).then(r=>r.json()),
   fetch('locations.json').then(r=>r.json()),
   fetch('recruits.json').then(r=>r.json()),
   fetch('team-rankings.json?ts='+Date.now()).then(r=>r.json())
