@@ -5,6 +5,7 @@ import time
 import unicodedata
 from datetime import datetime
 from pathlib import Path
+from urllib.parse import urljoin, urlparse
 
 import requests
 from requests.adapters import HTTPAdapter
@@ -54,11 +55,11 @@ NCES_URL = (
 
 SESSION = requests.Session()
 retry = Retry(
-    total=8,
-    connect=8,
-    read=8,
-    status=8,
-    backoff_factor=1.5,
+    total=1,
+    connect=1,
+    read=0,
+    status=1,
+    backoff_factor=0.5,
     status_forcelist=[429, 500, 502, 503, 504],
     allowed_methods=["GET"],
     raise_on_status=False,
@@ -104,26 +105,86 @@ def norm(s):
 
 def get(url, params=None):
     last_error = None
-    for attempt in range(1, 7):
+    for attempt in range(1, 3):
         try:
-            r = SESSION.get(url, params=params, timeout=(15, 45))
+            r = SESSION.get(url, params=params, timeout=(5, 12))
             if r.status_code >= 500:
                 raise requests.HTTPError(f"HTTP {r.status_code}", response=r)
             if r.status_code == 429:
-                time.sleep(min(30, attempt * 5))
+                time.sleep(attempt * 2)
                 continue
             r.raise_for_status()
-            time.sleep(0.35)
             return r
         except (requests.RequestException, ConnectionError) as e:
             last_error = e
-            wait = min(45, 2 ** attempt)
-            print(f"Request failed ({attempt}/6): {url} -> {e}. Retrying in {wait}s...")
+            wait = attempt * 2
+            print(f"Request failed ({attempt}/2): {url} -> {e}. Retrying in {wait}s...", flush=True)
             time.sleep(wait)
     print(f"WARNING: skipping unreachable source after retries: {url} ({last_error})")
     return None
 
+def load_cached_city_locations():
+    """Use the already-published season to locate postseason stadium cities.
+
+    During playoffs a normal refresh should not depend on a slow NCES bulk query.
+    The old regular-season games already contain thousands of Texas venue
+    coordinates. Aggregate them by venue city and preserve their existing
+    coordinates; use NCES only on the initial full-season build.
+    """
+    if not OUT.exists() or datetime.now().date() < datetime(YEAR, 11, 8).date():
+        return []
+    try:
+        old = json.loads(OUT.read_text(encoding="utf-8"))
+        if sum(len(w.get("games", [])) for w in old.values()) < 250:
+            return []
+        cities = {}
+        for wk in old.values():
+            for game in wk.get("games", []):
+                venue = (game.get("venue") or "").strip()
+                lat, lng = game.get("lat"), game.get("lng")
+                if lat is None or lng is None or not venue:
+                    continue
+                parts = [p.strip() for p in venue.split(",")]
+                if len(parts) < 2 or parts[-1].upper() not in ("TX", "TEXAS"):
+                    continue
+                city = parts[-2]
+                key = norm(city)
+                if not key or key in ("texas", "tx"):
+                    continue
+                entry = cities.setdefault(key, {"name": city, "lat": [], "lng": []})
+                entry["lat"].append(float(lat))
+                entry["lng"].append(float(lng))
+
+        # Seed regional hubs that can host neutral-site postseason games.
+        hubs = Path("locations.json")
+        if hubs.exists():
+            for name, coords in json.loads(hubs.read_text(encoding="utf-8")).items():
+                key = norm(name)
+                if key not in cities and isinstance(coords, list) and len(coords) == 2:
+                    cities[key] = {"name": name, "lat": [float(coords[0])],
+                                   "lng": [float(coords[1])]}
+
+        if len(cities) < 50:
+            return []
+        schools = []
+        for key, city in cities.items():
+            schools.append({"name": city["name"], "city": city["name"],
+                            "lat": sum(city["lat"]) / len(city["lat"]),
+                            "lng": sum(city["lng"]) / len(city["lng"]),
+                            "key": key})
+        print(f"Reusing {len(schools)} cached venue cities; skipping slow NCES download.",
+              flush=True)
+        return schools
+    except (OSError, ValueError, TypeError) as exc:
+        print(f"WARNING: cached venue coordinates not available: {exc}", flush=True)
+        return []
+
+
 def load_nces():
+    if os.environ.get("FORCE_NCES_REFRESH") != "1":
+        cached = load_cached_city_locations()
+        if cached:
+            return cached
     params = {
         "where":"STATE='TX'",
         "outFields":"NAME,CITY,STATE,LAT,LON",
@@ -346,27 +407,36 @@ PLAYOFF_BASE = "https://txhsfb.net/"
 PUBLISHED_PLAYOFF_PAGES = {
     12: "https://txhsfb.net/?p=29290",
     13: "https://txhsfb.net/?p=29577",
+    14: "https://txhsfb.net/?p=30121",
 }
 
 def playoff_page(week):
     if week in PUBLISHED_PLAYOFF_PAGES:
         return PUBLISHED_PLAYOFF_PAGES[week]
-    # Future rounds are discovered from the site's search results. Accept both
-    # "Week 14 Schedule" and "Week 14 Scores & Schedules" naming conventions.
-    url = f"https://txhsfb.net/?s=2026+Playoffs+Week+{week}+Schedule"
-    resp = get(url)
-    if resp is None:
-        return None
-    soup = BeautifulSoup(resp.text, "html.parser")
-    expected = re.compile(
-        rf"(?:2026\s+Playoffs.*)?Week\s+{week}\b.*(?:Schedule|Scores)",
-        re.I,
-    )
-    for a in soup.select("a[href]"):
-        href = a.get("href", "")
-        label = a.get_text(" ", strip=True)
-        if expected.search(label) and href.startswith(PLAYOFF_BASE):
-            return href
+
+    # The publisher changes titles and search ranking each week. Try both
+    # detailed and broad searches, then the recent-posts homepage, matching
+    # the actual article title rather than relying on any one search result.
+    search_urls = [
+        f"https://txhsfb.net/?s=2026+Playoffs+Week+{week}+Schedule",
+        f"https://txhsfb.net/?s=Week+{week}+Schedule",
+        PLAYOFF_BASE,
+    ]
+    for search_url in search_urls:
+        resp = get(search_url)
+        if resp is None:
+            continue
+        soup = BeautifulSoup(resp.text, "html.parser")
+        for a in soup.select("a[href]"):
+            label = re.sub(r"\\s+", " ", a.get_text(" ", strip=True))
+            if not (re.search(rf"\\b{YEAR}\\b", label)
+                    and re.search(rf"\\bWeek\\s+{week}\\b", label, re.I)
+                    and re.search(r"\\bSchedules?\\b", label, re.I)):
+                continue
+            href = urljoin(PLAYOFF_BASE, a.get("href", ""))
+            if urlparse(href).netloc.lower() == "txhsfb.net":
+                print(f"Found playoff week {week} article: {href}", flush=True)
+                return href
     return None
 
 def parse_playoff_week(week):
@@ -565,6 +635,11 @@ def main():
     # Populate team classifications from retained results where available.
     # The rank/baseline logic still works if a team is not classified.
     add_playoff_games(season, schools, class_by_team)
+
+    # Keep previously indexed Week 11 and playoff rounds if a source is
+    # temporarily unavailable. Week 11's completed scores must not disappear.
+    if not season["11"]["games"] and old_season.get("11", {}).get("games"):
+        season["11"]["games"] = old_season["11"]["games"]
 
     # Keep previously indexed playoff rounds if a source is temporarily unavailable.
     if OUT.exists():
